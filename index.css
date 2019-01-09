@@ -1,0 +1,54 @@
+
+body {
+    margin: 0;
+}
+
+.panel {
+    display: table;
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.halfpanel {
+    display: inline-block;
+    width: 49vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hide {
+    -webkit-transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -ms-transition: opacity .25s ease-in-out;
+    -o-transition: opacity .25s ease-in-out;
+     opacity: 0;
+}
+
+#one {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#one div {
+    font-family: 'Akronim', cursive;
+    height: inherit;
+    vertical-align: middle;
+    text-align: center;
+    display: table-cell;
+    color: white;
+    font-size: 10em;
+}
+
+#two {
+    display: none;
+}
+
+#three {
+    display: none;
+}
