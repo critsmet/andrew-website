@@ -1,26 +1,24 @@
-document.addEventListener('DOMContentLoaded', () => {
-
-    let lastScrollTop = 0;
-    let panel = 1;
-
-    window.addEventListener("scroll", function(){
-        let  st = window.pageYOffset;
-        if (st > lastScrollTop){
-            scrollUp()
-            panel++;
-        }
-        else {
-            panel == 0 ? null : panel--
-        }
+document.addEventListener('DOMContentLoaded', (event) => {
+    const skrllr = new Skrllr('main', {
+      transitionTime: 1800,
+      easing: 'cubic-bezier(0.77, 0, 0.175, 1)',
+      updateURL: true,
+      menu: document.querySelector('.pagination'),
+      beforeTransition: (index, nextIndex, next) => before(index, nextIndex, next),
+      afterTransition: (index, nextIndex, next) => after(index, nextIndex, next),
     })
-
-    function scrollUp(){
-        switch (panel){
-            case 1:
-            splashtext.classList.add("hide");
-            
-        }
+  
+    function before (index, nextIndex, next) {
+      console.log('Before transition');
+      console.log(index);
+      console.log(nextIndex);
+      console.log(next);
     }
-
-
-})
+  
+    function after (index, nextIndex, next) {
+      console.log('After transition');
+      console.log(index);
+      console.log(nextIndex);
+      console.log(next);
+    }
+  }, false)
