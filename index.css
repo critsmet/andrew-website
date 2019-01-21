@@ -1,4 +1,5 @@
 body, html {
+    background-color: black;
     display: block;
     position: fixed;
     margin: 0;
@@ -9,31 +10,19 @@ body, html {
     overflow: hidden;
   }
 
-  .skrllr-wrapper {
-    position: relative;
-    display: block;
-    width: 100vw;
-    height: 100%;
-    padding: 0;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-  }
-
-  .skrllr-section {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .wrapper {
-    height: 100% !important;
-    height: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-  }
+.slide {
+  width: 100vw;
+  height: 100vh;
+  -webkit-transition: opacity .5s ease-in;
+   -moz-transition: opacity .5s ease-in;
+    -ms-transition: opacity .5s ease-in;
+     -o-transition: opacity .5s ease-in;
+        transition: opacity .5s ease-in;
+}
 
 #one {
+    position: absolute;
+    opacity: 0;
     background-image: url("j_criscitello_golden_roses.jpg");
     background-size: 115% auto;
     background-repeat: no-repeat;
@@ -43,45 +32,76 @@ body, html {
 
 
 #one div{
-  color: white;
-  font-size: 3em;
   position: absolute;
-  right: 200px;
-  bottom: 100px;
+  left: 15%;
+  top: 25%;
 }
 
 #one span{
-  background-color: black;
-  margin-bottom: 20px;
+  color: white;
+  font-size: 2em;
+  font-family: 'Kumar One', cursive;
+  opacity: 0;
+  display: inline-block;
+  margin-bottom: 2em;
+  padding: 10px;
+  background-color:rgba(0, 0, 0, 0.75);
+  -webkit-transition: opacity .5s ease-in;
+   -moz-transition: opacity .5s ease-in;
+    -ms-transition: opacity .5s ease-in;
+     -o-transition: opacity .5s ease-in;
+        transition: opacity .5s ease-in;
 }
 
 #two {
-    background-image: url("butterfly_rose.jpg");
-    background-size: fill;
+    position: absolute;
+    opacity: 0;
+    background-image: url("butterfly_rose.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     color: white;
     font-size: 2em;
 }
 
-.story-one {
-  position: absolute;
-  bottom: 200px;
-  left: 100px;
-  transform: rotate(-60deg);
+#two span{
+  color: white;
+  font-size: 1.5em;
+  font-family: 'Kumar One', cursive;
+  background-color:rgba(0, 0, 0, 0.75);
+  -webkit-transition: opacity .5s ease-in;
+   -moz-transition: opacity .5s ease-in;
+    -ms-transition: opacity .5s ease-in;
+     -o-transition: opacity .5s ease-in;
+        transition: opacity .5s ease-in;
 }
 
-.story-two {
+#story {
+  opacity: 0;
   position: absolute;
-  bottom: 200px;
-  right: 200px;
-  transform: rotate(-60deg);
+  left: 0;
+  top: 0;
+}
+
+#smile {
+  opacity: 0;
+  position: absolute;
+  top: 45%;
+  left: 15%;
+}
+
+#real {
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 #three {
-    background-image: url("ByebitchesFinal.png");
-    background-size: contain;
-}
-
-#four {
+    position: absolute;
+    font-size: 2.6em;
+    color: white;
+    font-family: 'Kumar One', cursive;
+    opacity: 0;
     background-image: url("telephones.png");
     background-color: #0E0E2A;
     background-repeat: no-repeat;
@@ -89,43 +109,72 @@ body, html {
     background-size: auto 100%;
 }
 
-.believe-me {
-  font-size: 5em;
-  color: white;
+#stories {
+  width: 25vw;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-#five {
+#wire {
+  width: 25vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#four {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
     background-image: url("lamb_swan.png");
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: center 50%;
 }
 
-#six {
-    background-image: url("rollins_flowers_butterfly.png");
+#dream {
+  font-family: 'Lobster Two', cursive;
+  color: #FF879D;
+  font-size: 4.5em;
+  padding-top: 2%;
+}
+
+#five {
+    position: absolute;
+    opacity: 0;
+    background-image: url("rollins_flowers_butterfly.jpg");
     background-size: 115% auto;
+    background-repeat: no-repeat;
     background-position: center 50%;
 }
 
-#seven {
+#six {
+    opacity: 0;
+    position: absolute;
     background-image: url("hlaftone_rose.png");
     background-repeat: no-repeat;
     background-size: contain;
 }
 
-#eight {
+#seven {
+    opacity: 0;
     background-image: url("feather.jpg");
     background-size: 100% auto;
     background-position: center 50%;
 }
 
-#nine {
+#eight {
+    opacity: 0;
     background-image: url("gold_rose.png");
     background-size: 50% auto;
     background-position: center;
 }
 
-#ten {
+#nine {
+    opacity: 0;
     background-image: url("FAGPrintly.png");
     background-color: #F9E29A;
     background-repeat: no-repeat;
@@ -133,14 +182,16 @@ body, html {
     background-position: 20% 50%;
 }
 
-#eleven {
+#ten {
+    opacity: 0;
     background-image: url("Beard.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: left;
 }
 
-#twelve {
+#eleven {
+    opacity: 0;
     background-image: url("studded_belt.png");
     background-size: 50% auto;
 }
