@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   let cP = 0
 
   function scroll(e){
+    console.log(e)
     if (e.deltaY > 40){
       document.removeEventListener("wheel", scroll)
       scrollDirection("down")
@@ -58,6 +59,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
             five.style.opacity = 1
           }, 500)
           break;
+        case 5:
+          cP++
+          five.style.opacity = 0
+          setTimeout(function(){
+            six.style.opacity = 1
+          }, 500)
+          break;
+          case 6:
+            cP++
+            six.style.opacity = 0
+            setTimeout(function(){
+              seven.style.opacity = 1
+            }, 500)
+            break;
         }
      } else if (direction === "up"){
       switch (cP) {
