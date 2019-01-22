@@ -140,7 +140,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
 
-
   document.addEventListener("wheel", scroll)
 
   setTimeout(function(){
