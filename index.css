@@ -30,7 +30,6 @@
     background-position: center 30%;
 }
 
-
 #one div{
   position: absolute;
   left: 15%;
@@ -129,16 +128,16 @@
 }
 
 #four {
-    text-align: center;
-    position: absolute;
-    font-size: 2.6em;
-    color: white;
-    font-family: 'Akronim', cursive;
-    background-image: url("studded_belt.png");
-    opacity: 0;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+  text-align: center;
+  position: absolute;
+  font-size: 2.6em;
+  color: white;
+  font-family: 'Akronim', cursive;
+  background-image: url("studded_belt.png");
+  opacity: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 #believe {
@@ -161,20 +160,20 @@
 }
 
 #five {
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    background-image: url("lamb_swan.png");
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    background-position: center 50%;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-image: url("lamb_swan.png");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center 50%;
 }
 
 #dream {
   top: 12.5%;
-  transform: translateY(12.5%);
+  transform: translateY(12%);
   text-shadow: 2px 2px #ff0000;
   font-family: 'Lobster Two', cursive;
   color: #FF879D;
@@ -183,55 +182,106 @@
 }
 
 #six {
-    position: absolute;
-    opacity: 0;
-    background-image: url("rollins_flowers_butterfly.jpg");
-    background-size: 115% auto;
-    background-repeat: no-repeat;
-    background-position: center 50%;
+  position: absolute;
+  opacity: 0;
+  background-image: url("rollins_flowers_butterfly.jpg");
+  background-size: 115% auto;
+  background-repeat: no-repeat;
+  background-position: center 50%;
+  font-family: 'Cabin Sketch', cursive;
+  color: white;
+}
+
+.quote{
+  display: inline-block;
+  color: black;
+  font-size: 4em;
+  background-color:rgba(255, 228, 225, 0.75);
+}
+
+#sister {
+  margin-top: 1.5em;
+  display: inline-block;
+  font-size: 2em;
 }
 
 #seven {
-    opacity: 0;
-    position: absolute;
-    background-image: url("hlaftone_rose.png");
-    background-repeat: no-repeat;
-    background-size: contain;
+  position: absolute;
+  color: white;
+  opacity: 0;
+  background-color: black;
+  position: absolute;
+}
+
+#seven-left {
+  display: inline-block;
+  width: 65vw;
+  height: 100vh;
+  background-image: url("hlaftone_rose.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: auto 100%;
+}
+
+#seven-right {
+  text-align: center;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 3em;
+  float: right;
+  width: 35vw;
+  height: 100vh;
 }
 
 #eight {
-    opacity: 0;
-    background-image: url("feather.jpg");
-    background-size: 100% auto;
-    background-position: center 50%;
+  position: absolute;
+  opacity: 0;
+  background-image: url("feather.jpg");
+  background-size: 100% auto;
+  background-position: center 50%;
+}
+
+#eight .container{
+  position: absolute;
+  font-family: 'Ribeye Marrow', cursive;
+  color: black;
+  text-align: center;
+  width: 100%;
+  font-size: 3em;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #nine {
-    opacity: 0;
-    background-image: url("gold_rose.png");
-    background-size: 50% auto;
-    background-position: center;
+  position: absolute;
+  opacity: 0;
+  background-image: url("gold_rose.png");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center 50%;
 }
 
 #ten {
-    opacity: 0;
-    background-image: url("FAGPrintly.png");
-    background-color: #F9E29A;
-    background-repeat: no-repeat;
-    background-size: 50% auto;
-    background-position: 20% 50%;
+  position: absolute;
+  opacity: 0;
+  background-image: url("FAGPrintly.png");
+  background-color: #F9E29A;
+  background-repeat: no-repeat;
+  background-size: 50% auto;
+  background-position: 20% 50%;
 }
 
 #eleven {
-    opacity: 0;
-    background-image: url("Beard.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: left;
+  position: absolute;
+  opacity: 0;
+  background-image: url("Beard.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
 }
 
 #twelve {
-    opacity: 0;
-    background-image: url("studded_belt.png");
-    background-size: 50% auto;
+  position: absolute;
+  opacity: 0;
+  background-image: url("studded_belt.png");
+  background-size: 50% auto;
 }
