@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   function scroll(e){
     if (e.deltaY > 40){
-      console.log("gogtt it")
       document.removeEventListener("wheel", scroll)
       scrollDirection("down")
       setTimeout(function(){
@@ -52,6 +51,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           three.style.opacity = 0
           setTimeout(function(){
             four.style.opacity = 1
+            pageFour()
           }, 500)
           break;
         case 5:
@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           five.style.opacity = 0
           setTimeout(function(){
             six.style.opacity = 1
+            pageSix()
           }, 500)
           break;
         case 7:
@@ -73,6 +74,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           six.style.opacity = 0
           setTimeout(function(){
             seven.style.opacity = 1
+            pageSeven()
           }, 500)
           break;
         case 8:
@@ -190,6 +192,57 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   function pageThree(){
+    setTimeout(function(){
+      storyteller.style.opacity = 1
+    }, 500)
+    setTimeout(function(){
+      piece.style.opacity = 1
+    }, 2000)
+    setTimeout(function(){
+      shape.style.opacity = 1
+    }, 3500)
+  }
+
+  function pageFour(){
+    setTimeout(function(){
+      believe.style.opacity = 1
+    }, 500)
+    setTimeout(function(){
+      could.style.opacity = 1
+    }, 2000)
+    setTimeout(function(){
+      away.style.opacity = 1
+    }, 3000)
+    setTimeout(function(){
+      cannot.style.opacity = 1
+    }, 5000)
+  }
+
+  function pageSix(){
+    setTimeout(function(){
+      gate.style.opacity = 1
+    }, 500)
+    setTimeout(function(){
+      come.style.opacity = 1
+    }, 2000)
+    setTimeout(function(){
+      stay.style.opacity = 1
+    }, 3500)
+    setTimeout(function(){
+      time.style.opacity = 1
+    }, 5000)
+    setTimeout(function(){
+      boiled.style.opacity = 1
+    }, 6500)
+  }
+
+  function pageSeven(){
+    setTimeout(function(){
+      evolve.style.opacity = 1
+    }, 500)
+    setTimeout(function(){
+      down.style.opacity = 1
+    }, 2500)
   }
 
 
