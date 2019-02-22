@@ -245,7 +245,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }, 2500)
   }
 
+  function showModal(){
+    console.log("clicked")
+    modal.style.opacity = 1
+    modal.style.zIndex = 1000
+  }
 
+
+  contact.addEventListener("click", showModal)
   document.addEventListener("wheel", scroll)
 
   setTimeout(function(){

@@ -276,6 +276,7 @@
 }
 
 #info {
+  z-index: 999;
   position: absolute;
   font-family: 'Gugi', cursive;
   color: black;
@@ -286,7 +287,7 @@
   transform: translateY(-50%);
 }
 
-#ten {
+/* #ten {
   position: absolute;
   opacity: 0;
   background-image: url("FAGPrintly.png");
@@ -294,9 +295,9 @@
   background-repeat: no-repeat;
   background-size: 50% auto;
   background-position: 20% 50%;
-}
+} */
 
-#eleven {
+/* #eleven {
   position: absolute;
   opacity: 0;
   background-image: url("Beard.png");
@@ -310,4 +311,31 @@
   opacity: 0;
   background-image: url("studded_belt.png");
   background-size: 50% auto;
+} */
+
+#modal {
+  opacity: 0;
+  z-index: 999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 33vw;
+  height: 33vh;
+  background-color: white;
+  border-radius: 10px;
+  -webkit-transition: opacity .5s ease-in;
+   -moz-transition: opacity .5s ease-in;
+    -ms-transition: opacity .5s ease-in;
+     -o-transition: opacity .5s ease-in;
+        transition: opacity .5s ease-in;
 }
+
+label, input, textarea {
+  display: block;
+  margin: 8px;
+}
+
+#message {
+width: 31vw;
+height: 10vh;}
