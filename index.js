@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
       console.log("down")
       switch (cP) {
         case 1:
+          console.log(scroll, one)
           one.style.opacity = 1;
-          pageOne()
           cP++
           break;
         case 2:
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
 
-  function pageOne(){
+  function pageTwo(){
     setTimeout(function(){
       walk.style.opacity = 1
     }, 500)
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }, 2500)
   }
 
-  function pageTwo(){
+  function pageDash(){
     setTimeout(function(){
       story.style.opacity = 1
     }, 500)
