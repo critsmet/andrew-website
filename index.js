@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }, 2500)
   }
 
-  function pageDash(){
+  function pageThree(){
     setTimeout(function(){
       story.style.opacity = 1
     }, 500)
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }, 3500)
   }
 
-  function pageThree(){
+  function pageFour(){
     setTimeout(function(){
       storyteller.style.opacity = 1
     }, 500)
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }, 3500)
   }
 
-  function pageFour(){
+  function pageDash(){
     setTimeout(function(){
       believe.style.opacity = 1
     }, 500)
