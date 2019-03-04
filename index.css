@@ -11,6 +11,10 @@
     overflow: hidden;
   }
 
+#home {
+  background-image: url("unnamed.jpg");
+}
+
 .slide {
   width: 100vw;
   height: 100vh;
@@ -42,9 +46,9 @@
   vertical-align: middle;
   display: table-cell;
   text-align: center;
-  text-shadow: 2px 2px #ff0000;
+  text-shadow: 2px 2px #FF879D;
   font-family: 'Merienda One', cursive;
-  color: #FF879D;
+  color: white;
   font-size: 4rem;
 }
 
@@ -95,13 +99,13 @@
 
 #storys span{
   color: white;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-family: 'Merienda One', cursive;
+  text-shadow: 2px 2px #000000;
   opacity: 0;
   display: inline-block;
   margin-bottom: 2rem;
   padding: 10px;
-  background-color:rgba(0, 0, 0, 0.75);
   -webkit-transition: opacity .5s ease-in;
    -moz-transition: opacity .5s ease-in;
     -ms-transition: opacity .5s ease-in;
@@ -110,18 +114,31 @@
 }
 
 #iama {
+    display: table;
     position: absolute;
     background-color: #0E0E2A;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    text-shadow: 2px 2px #000000;
     font-family: 'Merienda One', cursive;
     color: white;
     opacity: 0;
     background-color: #EFD409;
 }
 
+#iamadiv {
+  background-image: url("telephones.png");
+  background-size: 105% auto;
+  background-repeat: no-repeat;
+  background-position: center 50%;
+  z-index: 1;
+  vertical-align: middle;
+  display: table-cell;
+  text-align: right;
+}
+
 #iama span{
     display: block;
-    width: 30vw;
+    width: 100vw;
     opacity: 0;
     -webkit-transition: opacity .5s ease-in;
      -moz-transition: opacity .5s ease-in;
@@ -130,19 +147,21 @@
           transition: opacity .5s ease-in;
 }
 
-#right {
+/* #right {
+  z-index: 0;
   position: fixed;
   top: 0;
   right: 0;
-  width: 70vw;
-  height: 100vh;
-}
+  width: 102vw;
+  height: 102vh;
+} */
 
 #believeme {
   text-align: center;
   position: absolute;
   color: white;
   font-family: 'Merienda One', cursive;
+  text-shadow: 2px 2px #40D1FF;
   background-image: url("studded_belt.png");
   opacity: 0;
   background-size: cover;
@@ -151,20 +170,13 @@
 }
 
 #believeme span{
+  font-size: 8rem;
   opacity: 0;
   -webkit-transition: opacity .5s ease-in;
    -moz-transition: opacity .5s ease-in;
     -ms-transition: opacity .5s ease-in;
      -o-transition: opacity .5s ease-in;
         transition: opacity .5s ease-in;
-}
-
-#believe {
-  font-size: 8rem;
-}
-
-#away, #could, #cannot {
-  font-size: 5rem;
 }
 
 #stories {
@@ -186,14 +198,13 @@
   background-repeat: no-repeat;
   background-position: center 50%;
   font-family: 'Merienda One', cursive;
-  color: white;
 }
 
 #doyou span{
   display: inline-block;
-  color: black;
-  font-size: 2.5rem;
-  background-color:rgba(255, 228, 225, 0.75);
+  color: white;
+  font-size: 3.5rem;
+  text-shadow: 2px 2px #F0000F;
   opacity: 0;
   -webkit-transition: opacity .5s ease-in;
    -moz-transition: opacity .5s ease-in;
@@ -210,15 +221,22 @@
   background-position: center 50%;
 }
 
-#feather .container{
+#feathertext{
+  opacity: 0;
   position: absolute;
   font-family: 'Merienda One', cursive;
-  color: black;
+  color: white;
+  text-shadow: 2px 2px black;
   text-align: center;
   width: 100%;
   font-size: 3rem;
   top: 50%;
   transform: translateY(-50%);
+  -webkit-transition: opacity .5s ease-in;
+   -moz-transition: opacity .5s ease-in;
+    -ms-transition: opacity .5s ease-in;
+     -o-transition: opacity .5s ease-in;
+        transition: opacity .5s ease-in;
 }
 
 #about {

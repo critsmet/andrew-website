@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           doyou.style.opacity = 0
           setTimeout(function(){
             feather.style.opacity = 1
+            featherSlide()
           }, 500)
           break;
         case 8:
@@ -226,6 +227,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     setTimeout(function(){
       boiled.style.opacity = 1
     }, 6500)
+  }
+
+  function featherSlide(){
+    setTimeout(function(){
+      feathertext.style.opacity = 1
+    }, 500)
   }
 
   function showModal(){
