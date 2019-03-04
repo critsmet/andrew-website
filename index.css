@@ -21,7 +21,7 @@
         transition: opacity .5s ease-in;
 }
 
-#one {
+#dreams {
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -30,10 +30,6 @@
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center 50%;
-}
-
-#dash {
-  opacity: 0
 }
 
 #dream-table {
@@ -47,12 +43,12 @@
   display: table-cell;
   text-align: center;
   text-shadow: 2px 2px #ff0000;
-  font-family: 'Lobster Two', cursive;
+  font-family: 'Merienda One', cursive;
   color: #FF879D;
-  font-size: 4.5rem;
+  font-size: 4rem;
 }
 
-#two {
+#walkin {
     position: absolute;
     opacity: 0;
     background-image: url("andyk.jpg");
@@ -61,21 +57,21 @@
     background-position: right 30%;
 }
 
-#two div{
+#walkin div{
   position: absolute;
   left: 15%;
   top: 25%;
 }
 
-#two span{
+#walkin span{
   color: white;
-  font-size: 2rem;
-  font-family: 'Kumar One', cursive;
+  font-size: 3rem;
+  font-family: 'Merienda One', cursive;
+  text-shadow: 2px 2px #DCB33E;
   opacity: 0;
   display: inline-block;
   margin-bottom: 2rem;
   padding: 10px;
-  background-color:rgba(0, 0, 0, 0.75);
   -webkit-transition: opacity .5s ease-in;
    -moz-transition: opacity .5s ease-in;
     -ms-transition: opacity .5s ease-in;
@@ -83,7 +79,7 @@
         transition: opacity .5s ease-in;
 }
 
-#three {
+#storys {
     position: absolute;
     opacity: 0;
     background-image: url("j_criscitello_golden_roses.jpg");
@@ -91,16 +87,16 @@
     background-repeat: no-repeat;
 }
 
-#three div{
+#storys div{
   position: absolute;
   left: 15%;
   top: 25%;
 }
 
-#three span{
+#storys span{
   color: white;
   font-size: 2rem;
-  font-family: 'Kumar One', cursive;
+  font-family: 'Merienda One', cursive;
   opacity: 0;
   display: inline-block;
   margin-bottom: 2rem;
@@ -113,17 +109,18 @@
         transition: opacity .5s ease-in;
 }
 
-#four {
+#iama {
     position: absolute;
     background-color: #0E0E2A;
     font-size: 2.5rem;
-    font-family: 'Kumar One', cursive;
+    font-family: 'Merienda One', cursive;
     color: white;
     opacity: 0;
     background-color: #EFD409;
 }
 
-#four span{
+#iama span{
+    display: block;
     width: 30vw;
     opacity: 0;
     -webkit-transition: opacity .5s ease-in;
@@ -141,11 +138,11 @@
   height: 100vh;
 }
 
-#five {
+#believeme {
   text-align: center;
   position: absolute;
   color: white;
-  font-family: 'Kumar One', cursive;
+  font-family: 'Merienda One', cursive;
   background-image: url("studded_belt.png");
   opacity: 0;
   background-size: cover;
@@ -153,7 +150,7 @@
   background-repeat: no-repeat;
 }
 
-#five span{
+#believeme span{
   opacity: 0;
   -webkit-transition: opacity .5s ease-in;
    -moz-transition: opacity .5s ease-in;
@@ -181,18 +178,18 @@
   left: 0;
 }
 
-#six {
+#doyou {
   position: absolute;
   opacity: 0;
   background-image: url("rollins_flowers_butterfly.jpg");
   background-size: 115% auto;
   background-repeat: no-repeat;
   background-position: center 50%;
-  font-family: 'Kumar One', cursive;
+  font-family: 'Merienda One', cursive;
   color: white;
 }
 
-#six span{
+#doyou span{
   display: inline-block;
   color: black;
   font-size: 2.5rem;
@@ -205,46 +202,7 @@
         transition: opacity .5s ease-in;
 }
 
-#seven {
-  position: absolute;
-  color: white;
-  opacity: 0;
-  background-color: black;
-  position: absolute;
-}
-
-#seven-left {
-  display: inline-block;
-  width: 60vw;
-  height: 100vh;
-  background-image: url("hlaftone_rose.png");
-  background-repeat: no-repeat;
-  background-position: left;
-  background-size: auto 100%;
-}
-
-#seven-right {
-  top: 7.5vh;
-  transform: translateY(7.5vh);
-  left: 5vw;
-  text-align: center;
-  font-family: 'Kumar One', cursive;
-  font-size: 3rem;
-  float: right;
-  width: 40vw;
-  height: 100vh;
-}
-
-#seven-right span{
-  opacity: 0;
-  -webkit-transition: opacity .5s ease-in;
-   -moz-transition: opacity .5s ease-in;
-    -ms-transition: opacity .5s ease-in;
-     -o-transition: opacity .5s ease-in;
-        transition: opacity .5s ease-in;
-}
-
-#eight {
+#feather {
   position: absolute;
   opacity: 0;
   background-image: url("feather.jpg");
@@ -252,9 +210,9 @@
   background-position: center 50%;
 }
 
-#eight .container{
+#feather .container{
   position: absolute;
-  font-family: 'Ribeye Marrow', cursive;
+  font-family: 'Merienda One', cursive;
   color: black;
   text-align: center;
   width: 100%;
@@ -263,7 +221,7 @@
   transform: translateY(-50%);
 }
 
-#nine {
+#about {
   position: absolute;
   opacity: 0;
   background-image: url("gold_rose.png");
@@ -275,7 +233,7 @@
 #info {
   z-index: 999;
   position: absolute;
-  font-family: 'Lobster Two', cursive;
+  font-family: 'Merienda One', cursive;
   color: black;
   text-align: center;
   width: 100%;

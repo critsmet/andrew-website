@@ -26,73 +26,65 @@ document.addEventListener('DOMContentLoaded', (event) => {
       console.log("down")
       switch (cP) {
         case 1:
-          console.log(scroll, one)
-          one.style.opacity = 1;
+          dreams.style.opacity = 1;
           cP++
           break;
         case 2:
           cP++
-          one.style.opacity = 0;
+          dreams.style.opacity = 0;
           setTimeout(function(){
-            two.style.opacity = 1
-            pageTwo()
+            walkin.style.opacity = 1
+            walkIn()
           }, 500)
           break;
         case 3:
           cP++
-          two.style.opacity = 0
+          walkin.style.opacity = 0
           setTimeout(function(){
-            three.style.opacity = 1
-            pageThree()
+            storys.style.opacity = 1
+            storysSlide()
           }, 500)
           break;
         case 4:
           cP++
-          three.style.opacity = 0
+          storys.style.opacity = 0
           setTimeout(function(){
-            four.style.opacity = 1
-            pageFour()
+            iama.style.opacity = 1
+            iAmASlide()
           }, 500)
           break;
         case 5:
           cP++
-          four.style.opacity = 0
+          iama.style.opacity = 0
           setTimeout(function(){
-            five.style.opacity = 1
+            believeme.style.opacity = 1
+            believeMeSlide()
           }, 500)
           break;
         case 6:
           cP++
-          five.style.opacity = 0
+          believeme.style.opacity = 0
           setTimeout(function(){
-            six.style.opacity = 1
-            pageSix()
+            doyou.style.opacity = 1
+            doYouSlide()
           }, 500)
           break;
         case 7:
           cP++
-          six.style.opacity = 0
+          doyou.style.opacity = 0
           setTimeout(function(){
-            seven.style.opacity = 1
-            pageSeven()
+            feather.style.opacity = 1
           }, 500)
           break;
         case 8:
           cP++
-          seven.style.opacity = 0
+          feather.style.opacity = 0
           setTimeout(function(){
-            eight.style.opacity = 1
-          }, 500)
-          break;
-        case 9:
-          cP++
-          eight.style.opacity = 0
-          setTimeout(function(){
-            nine.style.opacity = 1
+            about.style.opacity = 1
           }, 500)
           break;
         default:
-        break;
+          break;
         }
      } else if (direction === "up"){
       switch (cP) {
@@ -167,7 +159,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
 
-  function pageTwo(){
+  function walkIn(){
     setTimeout(function(){
       walk.style.opacity = 1
     }, 500)
@@ -179,7 +171,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }, 2500)
   }
 
-  function pageThree(){
+  function storysSlide(){
     setTimeout(function(){
       story.style.opacity = 1
     }, 500)
@@ -191,7 +183,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }, 3500)
   }
 
-  function pageFour(){
+  function iAmASlide(){
     setTimeout(function(){
       storyteller.style.opacity = 1
     }, 500)
@@ -203,7 +195,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }, 3500)
   }
 
-  function pageDash(){
+  function believeMeSlide(){
     setTimeout(function(){
       believe.style.opacity = 1
     }, 500)
@@ -218,7 +210,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }, 5000)
   }
 
-  function pageSix(){
+  function doYouSlide(){
     setTimeout(function(){
       gate.style.opacity = 1
     }, 500)
@@ -234,15 +226,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     setTimeout(function(){
       boiled.style.opacity = 1
     }, 6500)
-  }
-
-  function pageSeven(){
-    setTimeout(function(){
-      evolve.style.opacity = 1
-    }, 500)
-    setTimeout(function(){
-      down.style.opacity = 1
-    }, 2500)
   }
 
   function showModal(){
