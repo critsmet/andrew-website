@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', (event) => {
 
   //current frame that the user is on
-  let page = window.location.href[window.location.href.length - 1]
-  let cP = page == "l" ? 1 : parseInt(page)
+  let cP = 0
   let loading
 
   function scroll(e){
@@ -25,27 +24,31 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if (direction === "down"){
       console.log("down")
       switch (cP) {
-        case 1:
-          dreams.style.opacity = 1;
+        case 0:
           cP++
-          break;
-        case 2:
-          cP++
-          dreams.style.opacity = 0;
+          about.style.opacity = 1;
           setTimeout(function(){
-            walkin.style.opacity = 1
+            andrewrussell.style.opacity = 1
+            bio.style.opacity = 1
+          }, 750)
+          break;
+        case 1:
+          cP++
+          about.style.opacity = 0;
+          setTimeout(function(){
+            walkincontainer.style.opacity = 1
             walkIn()
           }, 500)
           break;
-        case 3:
+        case 2:
           cP++
-          walkin.style.opacity = 0
+          walkincontainer.style.opacity = 0
           setTimeout(function(){
             storys.style.opacity = 1
             storysSlide()
           }, 500)
           break;
-        case 4:
+        case 3:
           cP++
           storys.style.opacity = 0
           setTimeout(function(){
@@ -53,7 +56,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             iAmASlide()
           }, 500)
           break;
-        case 5:
+        case 4:
           cP++
           iama.style.opacity = 0
           setTimeout(function(){
@@ -61,7 +64,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             believeMeSlide()
           }, 500)
           break;
-        case 6:
+        case 5:
           cP++
           believeme.style.opacity = 0
           setTimeout(function(){
@@ -69,21 +72,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
             doYouSlide()
           }, 500)
           break;
-        case 7:
+        case 6:
           cP++
           doyou.style.opacity = 0
+          setTimeout(function(){
+            dreams.style.opacity = 1;
+          }, 500)
+          break;
+        case 7:
+          cP++
+          dreams.style.opacity = 0
           setTimeout(function(){
             feather.style.opacity = 1
             featherSlide()
           }, 500)
           break;
         case 8:
-          cP++
+          cP = 1
           feather.style.opacity = 0
-          setTimeout(function(){
-            about.style.opacity = 1
-          }, 500)
-          break;
+        setTimeout(function(){
+          about.style.opacity = 1;
+          andrewrussell.style.opacity = 1
+          bio.style.opacity = 1
+        }, 500)
         default:
           break;
         }
@@ -242,7 +253,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
 
-  contact.addEventListener("click", showModal)
+  // contact.addEventListener("click", showModal)
   document.addEventListener("wheel", scroll)
 
   setTimeout(function(){

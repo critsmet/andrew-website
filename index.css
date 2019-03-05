@@ -15,6 +15,24 @@
   background-image: url("unnamed.jpg");
 }
 
+#arrow {
+  z-index: 100;
+  position: fixed;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#name {
+  font-family: 'Reenie Beanie', cursive;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  font-size: 6rem;
+  text-shadow: 2px 2px black;
+  color: white;
+}
+
 .slide {
   width: 100vw;
   height: 100vh;
@@ -47,21 +65,47 @@
   display: table-cell;
   text-align: center;
   text-shadow: 2px 2px #FF879D;
-  font-family: 'Merienda One', cursive;
+  font-family: 'Reenie Beanie', cursive;
   color: white;
   font-size: 4rem;
 }
 
-#walkin {
+#about {
     position: absolute;
     opacity: 0;
     background-image: url("andyk.jpg");
     background-size: 50% auto;
     background-repeat: no-repeat;
     background-position: right 30%;
+    -webkit-transition: opacity .5s ease-in;
+     -moz-transition: opacity .5s ease-in;
+      -ms-transition: opacity .5s ease-in;
+       -o-transition: opacity .5s ease-in;
+          transition: opacity .5s ease-in;
 }
 
-#walkin div{
+#bio{
+  margin-top: 10px;
+  font-family: 'Raleway', sans-serif;
+}
+
+#walkincontainer {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    opacity: 0;
+    background-color: black;
+    background-size: 50% auto;
+    background-repeat: no-repeat;
+    background-position: right 30%;
+    -webkit-transition: opacity .5s ease-in;
+     -moz-transition: opacity .5s ease-in;
+      -ms-transition: opacity .5s ease-in;
+       -o-transition: opacity .5s ease-in;
+          transition: opacity .5s ease-in;
+}
+
+#walkin{
   position: absolute;
   left: 15%;
   top: 25%;
@@ -69,8 +113,8 @@
 
 #walkin span{
   color: white;
-  font-size: 3rem;
-  font-family: 'Merienda One', cursive;
+  font-size: 4rem;
+  font-family: 'Reenie Beanie', cursive;
   text-shadow: 2px 2px #DCB33E;
   opacity: 0;
   display: inline-block;
@@ -81,6 +125,37 @@
     -ms-transition: opacity .5s ease-in;
      -o-transition: opacity .5s ease-in;
         transition: opacity .5s ease-in;
+}
+
+#about div{
+  position: absolute;
+  top: 30%;
+  left: 15%;
+  width: 50vw;
+  height: 100vh;
+}
+
+#about span{
+  color: white;
+  opacity: 0;
+  margin-top: 10px;
+  -webkit-transition: opacity .5s ease-in;
+   -moz-transition: opacity .5s ease-in;
+    -ms-transition: opacity .5s ease-in;
+     -o-transition: opacity .5s ease-in;
+        transition: opacity .5s ease-in;
+}
+
+#about img{
+    margin-top: 15px;
+}
+
+#andrewrussell {
+  text-shadow: 2px 2px #FF879D;
+  font-family: 'Reenie Beanie', cursive;
+  color: white;
+  font-size: 4rem;
+  display: block;
 }
 
 #storys {
@@ -99,8 +174,8 @@
 
 #storys span{
   color: white;
-  font-size: 2.5rem;
-  font-family: 'Merienda One', cursive;
+  font-size: 4rem;
+  font-family: 'Reenie Beanie', cursive;
   text-shadow: 2px 2px #000000;
   opacity: 0;
   display: inline-block;
@@ -117,9 +192,9 @@
     display: table;
     position: absolute;
     background-color: #0E0E2A;
-    font-size: 3rem;
+    font-size: 4rem;
     text-shadow: 2px 2px #000000;
-    font-family: 'Merienda One', cursive;
+    font-family: 'Reenie Beanie', cursive;
     color: white;
     opacity: 0;
     background-color: #EFD409;
@@ -131,9 +206,9 @@
   background-repeat: no-repeat;
   background-position: center 50%;
   z-index: 1;
-  vertical-align: middle;
+  vertical-align: bottom;
   display: table-cell;
-  text-align: right;
+  text-align: left;
 }
 
 #iama span{
@@ -160,7 +235,7 @@
   text-align: center;
   position: absolute;
   color: white;
-  font-family: 'Merienda One', cursive;
+  font-family: 'Reenie Beanie', cursive;
   text-shadow: 2px 2px #40D1FF;
   background-image: url("studded_belt.png");
   opacity: 0;
@@ -197,13 +272,13 @@
   background-size: 115% auto;
   background-repeat: no-repeat;
   background-position: center 50%;
-  font-family: 'Merienda One', cursive;
+  font-family: 'Reenie Beanie', cursive;
 }
 
 #doyou span{
   display: inline-block;
   color: white;
-  font-size: 3.5rem;
+  font-size: 4rem;
   text-shadow: 2px 2px #F0000F;
   opacity: 0;
   -webkit-transition: opacity .5s ease-in;
@@ -224,12 +299,12 @@
 #feathertext{
   opacity: 0;
   position: absolute;
-  font-family: 'Merienda One', cursive;
+  font-family: 'Reenie Beanie', cursive;
   color: white;
   text-shadow: 2px 2px black;
   text-align: center;
   width: 100%;
-  font-size: 3rem;
+  font-size: 5rem;
   top: 50%;
   transform: translateY(-50%);
   -webkit-transition: opacity .5s ease-in;
@@ -237,31 +312,6 @@
     -ms-transition: opacity .5s ease-in;
      -o-transition: opacity .5s ease-in;
         transition: opacity .5s ease-in;
-}
-
-#about {
-  position: absolute;
-  opacity: 0;
-  background-image: url("gold_rose.png");
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  background-position: center 50%;
-}
-
-#info {
-  z-index: 999;
-  position: absolute;
-  font-family: 'Merienda One', cursive;
-  color: black;
-  text-align: center;
-  width: 100%;
-  font-size: 2rem;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#contact{
-  text-decoration: underline;
 }
 
 #marquee {
