@@ -22,11 +22,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   function scrollDirection(direction){
     if (direction === "down"){
-      console.log("down")
+      console.log("down", cP)
       switch (cP) {
         case 0:
           cP++
           about.style.opacity = 1;
+          about.style.zIndex = 1
           setTimeout(function(){
             andrewrussell.style.opacity = 1
             bio.style.opacity = 1
@@ -35,62 +36,76 @@ document.addEventListener('DOMContentLoaded', (event) => {
         case 1:
           cP++
           about.style.opacity = 0;
+          about.style.zIndex = -1
           setTimeout(function(){
             walkincontainer.style.opacity = 1
+            walkincontainer.style.zIndex = 1
             walkIn()
           }, 500)
           break;
         case 2:
           cP++
           walkincontainer.style.opacity = 0
+          walkincontainer.style.zIndex = -1
           setTimeout(function(){
             storys.style.opacity = 1
-            storysSlide()
+            storys.style.zIndex = 1
+            storySlide()
           }, 500)
           break;
         case 3:
           cP++
           storys.style.opacity = 0
+          storys.style.zIndex = -1
           setTimeout(function(){
             iama.style.opacity = 1
+            iama.style.zIndex = 1
             iAmASlide()
           }, 500)
           break;
         case 4:
           cP++
           iama.style.opacity = 0
+          iama.style.zIndex = -1
           setTimeout(function(){
             believeme.style.opacity = 1
+            believeme.style.zIndex = 1
             believeMeSlide()
           }, 500)
           break;
+        // case 5:
+        //   cP++
+        //   believeme.style.opacity = 0
+        //   setTimeout(function(){
+        //     doyou.style.opacity = 1
+        //     doYouSlide()
+        //   }, 500)
+        //   break;
         case 5:
           cP++
           believeme.style.opacity = 0
+          believeme.style.zIndex = -1
           setTimeout(function(){
-            doyou.style.opacity = 1
-            doYouSlide()
+            dreams.style.opacity = 1;
+            dreams.style.zIndex = 1
           }, 500)
           break;
         case 6:
           cP++
-          doyou.style.opacity = 0
-          setTimeout(function(){
-            dreams.style.opacity = 1;
-          }, 500)
-          break;
-        case 7:
-          cP++
           dreams.style.opacity = 0
+          dreams.style.zIndex = -1
           setTimeout(function(){
             feather.style.opacity = 1
+            feather.style.zIndex = 1
             featherSlide()
           }, 500)
           break;
-        case 8:
+        case 7:
           cP = 1
           feather.style.opacity = 0
+          feather.style.zIndex = -1
         setTimeout(function(){
+          about.style.zIndex = 1
           about.style.opacity = 1;
           andrewrussell.style.opacity = 1
           bio.style.opacity = 1
@@ -99,76 +114,77 @@ document.addEventListener('DOMContentLoaded', (event) => {
           break;
         }
      } else if (direction === "up"){
+       console.log("up", cP)
       switch (cP) {
+        case 1:
+          break;
         case 2:
+          cP--
+          walkincontainer.style.opacity = 0
+          walkincontainer.style.zIndex = -1
+          setTimeout(function(){
+            about.style.opacity = 1;
+            about.style.zIndex = 1
+          }, 250)
+          setTimeout(function(){
+            andrewrussell.style.opacity = 1
+            bio.style.opacity = 1
+          }, 750)
           break;
         case 3:
           cP--
-          two.style.opacity = 0;
-          //need to add some clearTimeouts
+          storys.style.opacity = 0
+          storys.style.zIndex = -1
           setTimeout(function(){
-            one.style.opacity = 1
-            pageOne()
+            walkincontainer.style.opacity = 1
+            walkincontainer.style.zIndex = 1
+            walkIn()
           }, 500)
           break;
-      case 4:
+        case 4:
+          cP--
+          iama.style.opacity = 0
+          iama.style.zIndex = -1
+          setTimeout(function(){
+            storys.style.opacity = 1
+            storys.style.zIndex = 1
+            storySlide()
+          }, 500)
+          break;
+        case 5:
+          cP--
+          believeme.style.opacity = 0
+          believe.style.zIndex = -1
+          setTimeout(function(){
+            iama.style.opacity = 1
+            iama.style.zIndex = 1
+            iAmASlide()
+          }, 500)
+          break;
+        case 6:
         cP--
-        three.style.opacity = 0;
-        //need to add some clearTimeouts
-        setTimeout(function(){
-          two.style.opacity = 1
-          pageTwo()
-        }, 500)
-        break;
-      case 5:
-        cP--
-        four.style.opacity = 0;
-        //need to add some clearTimeouts
-        setTimeout(function(){
-          three.style.opacity = 1
-        }, 500)
-        break;
-      case 6:
-        cP--
-        five.style.opacity = 0;
-        //need to add some clearTimeouts
-        setTimeout(function(){
-          four.style.opacity = 1
-        }, 500)
-        break;
-      case 7:
-        cP--
-        six.style.opacity = 0;
-        //need to add some clearTimeouts
-        setTimeout(function(){
-          five.style.opacity = 1
-        }, 500)
-        break;
-      case 8:
-        cP--
-        seven.style.opacity = 0;
-        //need to add some clearTimeouts
-        setTimeout(function(){
-          six.style.opacity = 1
-        }, 500)
-        break;
-      case 9:
-        cP--
-        eight.style.opacity = 0;
-        setTimeout(function(){
-          seven.style.opacity = 1
-        }, 500)
-        break;
-      case 10:
-        cP--
-        nine.style.opacity = 0;
-        setTimeout(function(){
-          eight.style.opacity = 1
-        }, 500)
-        break;
+          dreams.style.opacity = 0
+          dreams.style.zIndex = -1
+          setTimeout(function(){
+            believeme.style.opacity = 1
+            believeme.style.opacity = 1
+            believeMeSlide()
+          }, 500)
+          break;
+        case 7:
+          cP--
+          feather.style.opacity = 0
+          feather.style.zIndex = -1
+          setTimeout(function(){
+            dreams.style.opacity = 1;
+            dreams.style.opacity = 1
+          }, 500)
+          break;
+        default:
+          break;
+        }
       }
     }
-  }
 
 
   function walkIn(){
@@ -183,7 +199,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }, 2500)
   }
 
-  function storysSlide(){
+  function storySlide(){
     setTimeout(function(){
       story.style.opacity = 1
     }, 500)
@@ -209,17 +225,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   function believeMeSlide(){
     setTimeout(function(){
-      believe.style.opacity = 1
+      could.style.opacity = 1
     }, 500)
     setTimeout(function(){
-      could.style.opacity = 1
-    }, 2000)
-    setTimeout(function(){
       away.style.opacity = 1
-    }, 3000)
+    }, 1500)
     setTimeout(function(){
       cannot.style.opacity = 1
-    }, 5000)
+    }, 3000)
   }
 
   function doYouSlide(){
@@ -242,8 +255,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   function featherSlide(){
     setTimeout(function(){
-      feathertext.style.opacity = 1
-    }, 500)
+      the.style.opacity = 1
+    }, 1250)
+    setTimeout(function(){
+      model.style.opacity = 1
+    }, 1750)
+    setTimeout(function(){
+      is.style.opacity = 1
+    }, 2500)
+    setTimeout(function(){
+      the2.style.opacity = 1
+    }, 3000)
+    setTimeout(function(){
+      mission.style.opacity = 1
+    }, 3250)
   }
 
   function showModal(){

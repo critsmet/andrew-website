@@ -1,4 +1,14 @@
- body, html{
+@font-face {
+ font-family: 'Chromosome';
+ src: url('./ChromosomeHeavy.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ChromosomeReversed';
+  src: url('./ChromosomeReversed.woff') format('woff');
+}
+
+body, html{
     background-color: black;
     display: block;
     position: fixed;
@@ -16,7 +26,7 @@
 }
 
 #arrow {
-  z-index: 100;
+  z-index: 2;
   position: fixed;
   bottom: 5%;
   left: 50%;
@@ -65,9 +75,9 @@
   display: table-cell;
   text-align: center;
   text-shadow: 2px 2px #FF879D;
-  font-family: 'Reenie Beanie', cursive;
+  font-family: 'Lobster Two', cursive;
   color: white;
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 #about {
@@ -86,7 +96,10 @@
 
 #bio{
   margin-top: 10px;
+  margin-left: 1%;
+  display: block;
   font-family: 'Raleway', sans-serif;
+  font-size: 1.05rem;
 }
 
 #walkincontainer {
@@ -108,13 +121,13 @@
 #walkin{
   position: absolute;
   left: 15%;
-  top: 25%;
+  top: 20%;
 }
 
 #walkin span{
   color: white;
-  font-size: 4rem;
-  font-family: 'Reenie Beanie', cursive;
+  font-size: 3rem;
+  font-family: 'Bungee Shade', cursive;
   text-shadow: 2px 2px #DCB33E;
   opacity: 0;
   display: inline-block;
@@ -152,31 +165,33 @@
 
 #andrewrussell {
   text-shadow: 2px 2px #FF879D;
-  font-family: 'Reenie Beanie', cursive;
+  font-family: 'ChromosomeHeavy', cursive;
   color: white;
-  font-size: 4rem;
+  font-size: 2.6rem;
   display: block;
 }
 
 #storys {
-    position: absolute;
-    opacity: 0;
-    background-image: url("j_criscitello_golden_roses.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+  display: table;
+  position: absolute;
+  opacity: 0;
+  background-image: url("j_criscitello_golden_roses.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  font-size: 2.75rem;
+  font-family: 'Yatra One', cursive;
+  text-shadow: 4px 4px #000000;
 }
 
 #storys div{
-  position: absolute;
-  left: 15%;
-  top: 25%;
+  background-position: center 50%;
+  vertical-align: middle;
+  display: table-cell;
+  text-align: center;
 }
 
 #storys span{
-  color: white;
-  font-size: 4rem;
-  font-family: 'Reenie Beanie', cursive;
-  text-shadow: 2px 2px #000000;
   opacity: 0;
   display: inline-block;
   margin-bottom: 2rem;
@@ -191,10 +206,9 @@
 #iama {
     display: table;
     position: absolute;
-    background-color: #0E0E2A;
-    font-size: 4rem;
+    font-size: 3rem;
     text-shadow: 2px 2px #000000;
-    font-family: 'Reenie Beanie', cursive;
+    font-family: 'Chromosome', cursive;
     color: white;
     opacity: 0;
     background-color: #EFD409;
@@ -205,15 +219,13 @@
   background-size: 105% auto;
   background-repeat: no-repeat;
   background-position: center 50%;
-  z-index: 1;
-  vertical-align: bottom;
+  vertical-align: middle;
   display: table-cell;
-  text-align: left;
+  text-align: center;
 }
 
 #iama span{
-    display: block;
-    width: 100vw;
+    background-color: black;
     opacity: 0;
     -webkit-transition: opacity .5s ease-in;
      -moz-transition: opacity .5s ease-in;
@@ -223,7 +235,6 @@
 }
 
 /* #right {
-  z-index: 0;
   position: fixed;
   top: 0;
   right: 0;
@@ -232,10 +243,10 @@
 } */
 
 #believeme {
-  text-align: center;
+  display: table;
   position: absolute;
   color: white;
-  font-family: 'Reenie Beanie', cursive;
+  font-family: 'Kumar One', cursive;
   text-shadow: 2px 2px #40D1FF;
   background-image: url("studded_belt.png");
   opacity: 0;
@@ -244,8 +255,14 @@
   background-repeat: no-repeat;
 }
 
+#believemecontainer{
+  vertical-align: middle;
+  display: table-cell;
+  text-align: center;
+}
+
 #believeme span{
-  font-size: 8rem;
+  font-size: 5rem;
   opacity: 0;
   -webkit-transition: opacity .5s ease-in;
    -moz-transition: opacity .5s ease-in;
@@ -296,10 +313,18 @@
   background-position: center 50%;
 }
 
-#feathertext{
+.featherword {
   opacity: 0;
+  -webkit-transition: opacity .5s ease-in;
+   -moz-transition: opacity .5s ease-in;
+    -ms-transition: opacity .5s ease-in;
+     -o-transition: opacity .5s ease-in;
+        transition: opacity .5s ease-in;
+}
+
+#feathertext{
   position: absolute;
-  font-family: 'Reenie Beanie', cursive;
+  font-family: 'Cabin Sketch', cursive;
   color: white;
   text-shadow: 2px 2px black;
   text-align: center;
@@ -307,11 +332,6 @@
   font-size: 5rem;
   top: 50%;
   transform: translateY(-50%);
-  -webkit-transition: opacity .5s ease-in;
-   -moz-transition: opacity .5s ease-in;
-    -ms-transition: opacity .5s ease-in;
-     -o-transition: opacity .5s ease-in;
-        transition: opacity .5s ease-in;
 }
 
 #marquee {
@@ -358,7 +378,6 @@
 
 #modal {
   opacity: 0;
-  z-index: 999;
   position: fixed;
   top: 50%;
   left: 50%;
