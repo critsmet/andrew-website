@@ -172,7 +172,7 @@ body, html{
 
 #andrewrussell {
   text-shadow: 2px 2px #FF879D;
-  font-family: 'ChromosomeHeavy', cursive;
+  font-family: 'Chromosome', cursive;
   color: white;
   font-size: 2.6rem;
   display: block;
@@ -341,22 +341,6 @@ body, html{
   transform: translateY(-50%);
 }
 
-#marquee {
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-#marquee img{
-  display: inline-block;
-  height: 600px;
-  animation: marquee 7s linear infinite;
-}
-
-@keyframes marquee {
-    0%   { transform: translate(0, 0); }
-    100% { transform: translate(-100%, 0); }
-  }
-
 /* #ten {
   position: absolute;
   opacity: 0;
@@ -385,7 +369,7 @@ body, html{
 
 #modal {
   padding-top: 15px;
-  font-family: 'ChromosomeHeavy', cursive;
+  font-family: 'Chromosome', cursive;
   color: white;
   text-shadow: 2px 2px #FF879D;
   opacity: 0;
