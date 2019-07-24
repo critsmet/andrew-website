@@ -21,7 +21,7 @@ body, html{
     overflow: hidden;
   }
 
-#mail:hover{
+#mail:hover, #send:hover, #closemodal:hover, #send:hover{
   cursor: pointer;
 }
 
@@ -457,8 +457,4 @@ textarea::-webkit-scrollbar-thumb {
   font-size: 2em;
   top: 5px;
   right: 15px;
-}
-
-#closemodal:hover {
-  cursor: pointer;
 }

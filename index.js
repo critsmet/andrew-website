@@ -247,8 +247,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
     setTimeout(() => modal.style.zIndex = -1, 500)
   }
 
+  function sendEmail(){
+    Email.send({
+      SecureToken : "00e827cb-99e1-4173-9d0a-8b417588bfa9",
+      To : 'chrismhmm@gmail.com',
+      From : email.value,
+      Subject : `A Message From ${sender.value}`,
+      Body : message.value
+    })
+    .then(console.log)
+    .then(hideModal);
+  }
+
   mail.addEventListener("click", showModal)
   closemodal.addEventListener("click", hideModal)
+  send.addEventListener("click", sendEmail)
 
   function showArrow(){
     setTimeout(() => {
