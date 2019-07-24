@@ -21,17 +21,25 @@ body, html{
     overflow: hidden;
   }
 
-#home {
-  background-image: url("unnamed.jpg");
+#mail:hover{
+  cursor: pointer;
 }
 
 #arrow {
+  opacity: 0;
   z-index: 2;
   position: fixed;
   bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
+  transition: opacity .5s ease-in;
+  -webkit-transition: opacity .5s ease-in;
+   -moz-transition: opacity .5s ease-in;
+    -ms-transition: opacity .5s ease-in;
+     -o-transition: opacity .5s ease-in;
+        transition: opacity .5s ease-in;
 }
+
 
 #name {
   font-family: 'Reenie Beanie', cursive;
@@ -83,10 +91,9 @@ body, html{
 #about {
     position: absolute;
     opacity: 0;
-    background-image: url("andyk.jpg");
-    background-size: 50% auto;
+    background-image: url("andykedited.jpg");
+    background-size: 100% auto;
     background-repeat: no-repeat;
-    background-position: right 30%;
     -webkit-transition: opacity .5s ease-in;
      -moz-transition: opacity .5s ease-in;
       -ms-transition: opacity .5s ease-in;
@@ -377,15 +384,20 @@ body, html{
 } */
 
 #modal {
+  padding-top: 15px;
+  font-family: 'ChromosomeHeavy', cursive;
+  color: white;
+  text-shadow: 2px 2px #FF879D;
   opacity: 0;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 33vw;
-  height: 33vh;
-  background-color: white;
+  width: 50vw;
+  height: 60vh;
+  background-color: black;
   border-radius: 10px;
+  border: 5px solid #FF879D;
   -webkit-transition: opacity .5s ease-in;
    -moz-transition: opacity .5s ease-in;
     -ms-transition: opacity .5s ease-in;
@@ -394,10 +406,59 @@ body, html{
 }
 
 label, input, textarea {
+  margin-left: 15px;
+  margin-right: 15px;
   display: block;
-  margin: 8px;
 }
 
-#message {
-width: 31vw;
-height: 10vh;}
+label{
+  font-size: 1.5em;
+  vertical-align: middle;
+  margin-bottom: 5px;
+}
+
+#message{
+  height: 10vh;
+  vertical-align: top;
+  resize: none;
+}
+
+input, textarea {
+  width: 90%;
+  font-size: 1em;
+  color: white;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #FF879D;
+  outline: none;
+}
+
+input:focus, textarea:focus{
+  outline: none;
+}
+
+textarea::-webkit-scrollbar {
+  width: 12px;
+  background-color: black; }
+
+textarea::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #FF879D;
+}
+
+#send {
+  text-align: center;
+  font-size: 2em;
+}
+
+#closemodal {
+  position: absolute;
+  text-align: right;
+  font-size: 2em;
+  top: 5px;
+  right: 15px;
+}
+
+#closemodal:hover {
+  cursor: pointer;
+}

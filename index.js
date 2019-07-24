@@ -1,112 +1,84 @@
 document.addEventListener('DOMContentLoaded', (event) => {
 
-  //current frame that the user is on
-  let cP = 0
-  let loading
-
-  function scroll(e){
-    if (e.deltaY > 40){
-      document.removeEventListener("wheel", scroll)
-      scrollDirection("down")
-      setTimeout(function(){
-        document.addEventListener("wheel", scroll)
-      }, 1000)
-    } else if (e.deltaY < -40) {
-      document.removeEventListener("wheel", scroll)
-      scrollDirection("up")
-      setTimeout(function(){
-        document.addEventListener("wheel", scroll)
-      }, 1000)
-    }
+  //helper code for showing or hiding elements in the switch below
+  function hide(element){
+    element.style.opacity = 0
+    element.style.zIndex = -1
   }
+
+  function show(element){
+    element.style.opacity = 1
+    element.style.zIndex = 1
+  }
+
+  //currentSlide starts at 0 only when the user first visits the page.
+  let currentSlide = 0
+
 
   function scrollDirection(direction){
     if (direction === "down"){
-      console.log("down", cP)
-      switch (cP) {
+      console.log("down", currentSlide)
+      switch (currentSlide) {
         case 0:
-          cP++
-          about.style.opacity = 1;
-          about.style.zIndex = 1
+          currentSlide++
+          show(about)
           setTimeout(function(){
             andrewrussell.style.opacity = 1
             bio.style.opacity = 1
           }, 750)
           break;
         case 1:
-          cP++
-          about.style.opacity = 0;
-          about.style.zIndex = -1
+          currentSlide++
+          hide(about)
           setTimeout(function(){
-            walkincontainer.style.opacity = 1
-            walkincontainer.style.zIndex = 1
+            show(walkincontainer)
             walkIn()
           }, 500)
           break;
         case 2:
-          cP++
-          walkincontainer.style.opacity = 0
-          walkincontainer.style.zIndex = -1
+          currentSlide++
+          hide(walkincontainer)
           setTimeout(function(){
-            storys.style.opacity = 1
-            storys.style.zIndex = 1
+            show(storys)
             storySlide()
           }, 500)
           break;
         case 3:
-          cP++
-          storys.style.opacity = 0
-          storys.style.zIndex = -1
+          currentSlide++
+          hide(storys)
           setTimeout(function(){
-            iama.style.opacity = 1
-            iama.style.zIndex = 1
+            show(iama)
             iAmASlide()
           }, 500)
           break;
         case 4:
-          cP++
-          iama.style.opacity = 0
-          iama.style.zIndex = -1
+          currentSlide++
+          hide(iama)
           setTimeout(function(){
-            believeme.style.opacity = 1
-            believeme.style.zIndex = 1
+            show(believeme)
             believeMeSlide()
           }, 500)
           break;
-        // case 5:
-        //   cP++
-        //   believeme.style.opacity = 0
-        //   setTimeout(function(){
-        //     doyou.style.opacity = 1
-        //     doYouSlide()
-        //   }, 500)
-        //   break;
         case 5:
-          cP++
-          believeme.style.opacity = 0
-          believeme.style.zIndex = -1
+          currentSlide++
+          hide(believeme)
           setTimeout(function(){
-            dreams.style.opacity = 1;
-            dreams.style.zIndex = 1
+            show(dreams)
           }, 500)
           break;
         case 6:
-          cP++
-          dreams.style.opacity = 0
-          dreams.style.zIndex = -1
+          currentSlide++
+          hide(dreams)
           setTimeout(function(){
-            feather.style.opacity = 1
-            feather.style.zIndex = 1
+            show(feather)
             featherSlide()
           }, 500)
           break;
         case 7:
-          cP = 1
-          feather.style.opacity = 0
-          feather.style.zIndex = -1
+          currentSlide = 1
+          hide(feather)
         setTimeout(function(){
-          about.style.zIndex = 1
-          about.style.opacity = 1;
+          show(about)
           andrewrussell.style.opacity = 1
           bio.style.opacity = 1
         }, 500)
@@ -114,17 +86,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
           break;
         }
      } else if (direction === "up"){
-       console.log("up", cP)
-      switch (cP) {
+       console.log("up", currentSlide)
+      switch (currentSlide) {
         case 1:
           break;
         case 2:
-          cP--
-          walkincontainer.style.opacity = 0
-          walkincontainer.style.zIndex = -1
+          currentSlide--
+          hide(walkincontainer)
           setTimeout(function(){
-            about.style.opacity = 1;
-            about.style.zIndex = 1
+            show(about)
           }, 250)
           setTimeout(function(){
             andrewrussell.style.opacity = 1
@@ -132,52 +102,42 @@ document.addEventListener('DOMContentLoaded', (event) => {
           }, 750)
           break;
         case 3:
-          cP--
-          storys.style.opacity = 0
-          storys.style.zIndex = -1
+          currentSlide--
+          hide(storys)
           setTimeout(function(){
-            walkincontainer.style.opacity = 1
-            walkincontainer.style.zIndex = 1
+            show(walkincontainer)
             walkIn()
           }, 500)
           break;
         case 4:
-          cP--
-          iama.style.opacity = 0
-          iama.style.zIndex = -1
+          currentSlide--
+          hide(iama)
           setTimeout(function(){
-            storys.style.opacity = 1
-            storys.style.zIndex = 1
+            show(storys)
             storySlide()
           }, 500)
           break;
         case 5:
-          cP--
-          believeme.style.opacity = 0
-          believe.style.zIndex = -1
+          currentSlide--
+          hide(believeme)
           setTimeout(function(){
-            iama.style.opacity = 1
-            iama.style.zIndex = 1
+            show(iama)
             iAmASlide()
           }, 500)
           break;
         case 6:
-        cP--
-          dreams.style.opacity = 0
-          dreams.style.zIndex = -1
+          currentSlide--
+          hide(dreams)
           setTimeout(function(){
-            believeme.style.opacity = 1
-            believeme.style.opacity = 1
+            show(believeme)
             believeMeSlide()
           }, 500)
           break;
         case 7:
-          cP--
-          feather.style.opacity = 0
-          feather.style.zIndex = -1
+          currentSlide--
+          hide(feather)
           setTimeout(function(){
-            dreams.style.opacity = 1;
-            dreams.style.opacity = 1
+            show(dreams)
           }, 500)
           break;
         default:
@@ -186,7 +146,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       }
     }
 
-
+  //custom effect timings
   function walkIn(){
     setTimeout(function(){
       walk.style.opacity = 1
@@ -271,18 +231,58 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }, 3250)
   }
 
-  function showModal(){
-    console.log("clicked")
-    modal.style.opacity = 1
-    modal.style.zIndex = 1000
+  function dim(element){
+    element.style.opacity = .25
+    element.style.zIndex = 0
   }
 
+  function showModal(){
+    dim(about)
+    show(modal)
+  }
 
-  // contact.addEventListener("click", showModal)
+  function hideModal(){
+    modal.style.opacity = 0
+    show(about)
+    setTimeout(() => modal.style.zIndex = -1, 500)
+  }
+
+  mail.addEventListener("click", showModal)
+  closemodal.addEventListener("click", hideModal)
+
+  function showArrow(){
+    setTimeout(() => {
+      arrow.style.opacity = 1;
+      arrow.style.zIndex = 2
+    }, 500)
+  }
+
+  //handles the event to determine direction of slide change
+  function scroll(e){
+    if (e.deltaY > 40){
+      document.removeEventListener("wheel", scroll)
+      scrollDirection("down")
+      setTimeout(function(){
+        document.addEventListener("wheel", scroll)
+      }, 1000)
+    } else if (e.deltaY < -40) {
+      document.removeEventListener("wheel", scroll)
+      scrollDirection("up")
+      setTimeout(function(){
+        document.addEventListener("wheel", scroll)
+      }, 1000)
+    }
+  }
+
+  //basic transition functionality of the app.
+  //"scroll" is the name of the method that gives the user the sensation of 'scrolling' to change slides
   document.addEventListener("wheel", scroll)
 
+  //initial scroll down to show the first page
   setTimeout(function(){
     scrollDirection("down")
   }, 50)
+    showArrow()
+
 
 })

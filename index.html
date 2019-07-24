@@ -37,7 +37,7 @@
               <a href="https://www.instagram.com/heyheyandyk/">
                 <img src="./glyph.png" padding-left="10px" width="20px" height="20px"/>
               </a>
-              <img src="./mail.png" padding-left="10px" width="29px" height="19px"/>
+              <img id="mail" src="./mail.png" padding-left="10px" width="29px" height="19px"/>
             </span>
           </div>
         </div>
@@ -153,10 +153,15 @@
         <div id="modal">
           <label>Name:</label>
           <input type="text" />
+          <br />
           <label>Email:</label>
           <input type="email" />
+          <br />
           <label>Message:</label>
-          <textarea id="message" /></textarea>
+          <textarea id="message" type="text" /></textarea>
+          <br />
+          <div id="send">SEND</div>
+          <span id="closemodal">X</span>
         </div>
       </main>
     </div>
