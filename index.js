@@ -27,15 +27,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
       if (direction === "down" ){
         console.log("down", currentSlide)
         switch (currentSlide) {
-          case 0:
-          currentSlide++
-          show(about)
-          setTimeout(function(){
-            andrewrussell.style.opacity = 1
-            bio.style.opacity = 1
-            showArrow()
-          }, 750)
-          break;
           case 1:
           currentSlide++
           hideArrow()
@@ -336,6 +327,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   //initial scroll down to show the first page
   setTimeout(function(){
-    scrollDirection("down")
+    currentSlide++
+    show(about)
+    setTimeout(function(){
+      andrewrussell.style.opacity = 1
+      bio.style.opacity = 1
+      showArrow()
+    }, 750)
   }, 50)
 })

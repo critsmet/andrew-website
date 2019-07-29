@@ -34,6 +34,7 @@
 
   #about div {
     width: 40vw;
+    max-width: 450px;
   }
 
   #modal {
@@ -84,7 +85,7 @@ body, html{
 
 #about div{
   position: absolute;
-  top: 30%;
+  top: 32.5%;
   left: 15%;
   height: 100vh;
 }
