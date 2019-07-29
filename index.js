@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     element.style.zIndex = 1
   }
 
-  //currentSlide starts at 0 only when the user first visits the page.
+  //currentSlide is at 0 only when the user first visits the page and never after
   let currentSlide = 0
 
 
@@ -25,10 +25,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
           setTimeout(function(){
             andrewrussell.style.opacity = 1
             bio.style.opacity = 1
+            showArrow()
           }, 750)
           break;
         case 1:
           currentSlide++
+          hideArrow()
           hide(about)
           setTimeout(function(){
             show(walkincontainer)
@@ -37,6 +39,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           break;
         case 2:
           currentSlide++
+          hideArrow()
           hide(walkincontainer)
           setTimeout(function(){
             show(storys)
@@ -45,6 +48,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           break;
         case 3:
           currentSlide++
+          hideArrow()
           hide(storys)
           setTimeout(function(){
             show(iama)
@@ -53,21 +57,27 @@ document.addEventListener('DOMContentLoaded', (event) => {
           break;
         case 4:
           currentSlide++
+          hideArrow()
           hide(iama)
           setTimeout(function(){
-            show(believeme)
-            believeMeSlide()
+            show(walkaway)
+            walkAwaySlide()
           }, 500)
           break;
         case 5:
           currentSlide++
-          hide(believeme)
+          hideArrow()
+          hide(walkaway)
           setTimeout(function(){
             show(dreams)
           }, 500)
+          setTimeout(function(){
+            showArrow()
+          }, 2500)
           break;
         case 6:
           currentSlide++
+          hideArrow()
           hide(dreams)
           setTimeout(function(){
             show(feather)
@@ -76,11 +86,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
           break;
         case 7:
           currentSlide = 1
+          hideArrow()
           hide(feather)
         setTimeout(function(){
           show(about)
           andrewrussell.style.opacity = 1
           bio.style.opacity = 1
+          showArrow()
         }, 500)
         default:
           break;
@@ -92,6 +104,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           break;
         case 2:
           currentSlide--
+          hideArrow()
           hide(walkincontainer)
           setTimeout(function(){
             show(about)
@@ -103,6 +116,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           break;
         case 3:
           currentSlide--
+          hideArrow()
           hide(storys)
           setTimeout(function(){
             show(walkincontainer)
@@ -111,6 +125,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           break;
         case 4:
           currentSlide--
+          hideArrow()
           hide(iama)
           setTimeout(function(){
             show(storys)
@@ -119,7 +134,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
           break;
         case 5:
           currentSlide--
-          hide(believeme)
+          hideArrow()
+          hide(walkaway)
           setTimeout(function(){
             show(iama)
             iAmASlide()
@@ -127,14 +143,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
           break;
         case 6:
           currentSlide--
+          hideArrow()
           hide(dreams)
           setTimeout(function(){
-            show(believeme)
-            believeMeSlide()
+            show(walkaway)
+            walkAwaySlide()
           }, 500)
           break;
         case 7:
           currentSlide--
+          hideArrow()
           hide(feather)
           setTimeout(function(){
             show(dreams)
@@ -157,6 +175,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     setTimeout(function(){
       like.style.opacity = 1
     }, 2500)
+    setTimeout(function(){
+      showArrow()
+    }, 2500)
   }
 
   function storySlide(){
@@ -168,6 +189,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }, 2000)
     setTimeout(function(){
       real.style.opacity = 1
+    }, 3500)
+    setTimeout(function(){
+      showArrow()
     }, 3500)
   }
 
@@ -181,9 +205,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     setTimeout(function(){
       shape.style.opacity = 1
     }, 3500)
+    setTimeout(function(){
+      showArrow()
+    }, 2500)
   }
 
-  function believeMeSlide(){
+  function walkAwaySlide(){
     setTimeout(function(){
       could.style.opacity = 1
     }, 500)
@@ -193,24 +220,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     setTimeout(function(){
       cannot.style.opacity = 1
     }, 3000)
-  }
-
-  function doYouSlide(){
     setTimeout(function(){
-      gate.style.opacity = 1
-    }, 500)
-    setTimeout(function(){
-      come.style.opacity = 1
-    }, 2000)
-    setTimeout(function(){
-      stay.style.opacity = 1
-    }, 3500)
-    setTimeout(function(){
-      time.style.opacity = 1
-    }, 5000)
-    setTimeout(function(){
-      boiled.style.opacity = 1
-    }, 6500)
+      showArrow()
+    }, 3000)
   }
 
   function featherSlide(){
@@ -229,6 +241,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     setTimeout(function(){
       mission.style.opacity = 1
     }, 3250)
+    setTimeout(function(){
+      showArrow()
+    }, 3250)
   }
 
   function dim(element){
@@ -238,20 +253,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   function showModal(){
     dim(about)
-    show(modal)
+    setTimeout(() => show(modal), 250)
   }
 
   function hideModal(){
     modal.style.opacity = 0
     show(about)
-    setTimeout(() => modal.style.zIndex = -1, 500)
+    setTimeout(() => {
+      modal.style.zIndex = -1
+      email.value = ""
+      sender.value = ""
+      message.value = ""
+    }, 500)
   }
 
   function sendEmail(){
     Email.send({
-      SecureToken : "00e827cb-99e1-4173-9d0a-8b417588bfa9",
+      Host : "smtp.elasticemail.com",
+      Username : "chrismhmm@gmail.com",
+      Password : "9afc4867-9dd6-4e79-b764-82010bba5cf2",
       To : 'chrismhmm@gmail.com',
-      From : email.value,
+      From : 'chrismhmm@gmail.com',
+      ReplyAddress : email.value,
       Subject : `A Message From ${sender.value}`,
       Body : message.value
     })
@@ -262,12 +285,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
   mail.addEventListener("click", showModal)
   closemodal.addEventListener("click", hideModal)
   send.addEventListener("click", sendEmail)
+  arrow.addEventListener("click", () => scrollDirection("down"))
 
   function showArrow(){
     setTimeout(() => {
-      arrow.style.opacity = 1;
+      arrow.style.opacity = 1
       arrow.style.zIndex = 2
-    }, 500)
+      arrow.classList.value = "ready"
+    }, 1000)
+  }
+
+  function hideArrow(){
+    arrow.style.opacity = 0
+    arrow.classList.value = ""
   }
 
   //handles the event to determine direction of slide change
@@ -295,7 +325,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
   setTimeout(function(){
     scrollDirection("down")
   }, 50)
-    showArrow()
-
-
 })

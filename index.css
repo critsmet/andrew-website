@@ -9,6 +9,7 @@
 }
 
 body, html{
+    min-width: 900px;
     background-color: black;
     display: block;
     position: fixed;
@@ -20,73 +21,6 @@ body, html{
     font-size: 16px;
     overflow: hidden;
   }
-
-#mail:hover, #send:hover, #closemodal:hover, #send:hover{
-  cursor: pointer;
-}
-
-#arrow {
-  opacity: 0;
-  z-index: 2;
-  position: fixed;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: opacity .5s ease-in;
-  -webkit-transition: opacity .5s ease-in;
-   -moz-transition: opacity .5s ease-in;
-    -ms-transition: opacity .5s ease-in;
-     -o-transition: opacity .5s ease-in;
-        transition: opacity .5s ease-in;
-}
-
-
-#name {
-  font-family: 'Reenie Beanie', cursive;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  font-size: 6rem;
-  text-shadow: 2px 2px black;
-  color: white;
-}
-
-.slide {
-  width: 100vw;
-  height: 100vh;
-  -webkit-transition: opacity .5s ease-in;
-   -moz-transition: opacity .5s ease-in;
-    -ms-transition: opacity .5s ease-in;
-     -o-transition: opacity .5s ease-in;
-        transition: opacity .5s ease-in;
-}
-
-#dreams {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  opacity: 0;
-  background-image: url("lamb_swan.png");
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  background-position: center 50%;
-}
-
-#dream-table {
-  display: table;
-  width: 100vw;
-  height: 100vh;
-}
-
-#dream {
-  vertical-align: middle;
-  display: table-cell;
-  text-align: center;
-  text-shadow: 2px 2px #FF879D;
-  font-family: 'Lobster Two', cursive;
-  color: white;
-  font-size: 3.5rem;
-}
 
 #about {
     position: absolute;
@@ -109,20 +43,91 @@ body, html{
   font-size: 1.05rem;
 }
 
+#about div{
+  position: absolute;
+  top: 30%;
+  left: 15%;
+  width: 50vw;
+  height: 100vh;
+}
+
+#andrewrussell {
+  text-shadow: 2px 2px #FF879D;
+  font-family: 'ChromosomeHeavy', cursive;
+  letter-spacing: -1.5px;
+  color: white;
+  font-size: 2.6rem;
+  font
+  display: block;
+}
+
+#about span{
+  color: white;
+  opacity: 0;
+  margin-top: 10px;
+  -webkit-transition: opacity .5s ease-in;
+   -moz-transition: opacity .5s ease-in;
+    -ms-transition: opacity .5s ease-in;
+     -o-transition: opacity .5s ease-in;
+        transition: opacity .5s ease-in;
+}
+
+#about img{
+    margin-top: 15px;
+}
+
+#insta {
+    width: 20px;
+    height: 20px;
+  }
+
+  #mail {
+    padding-bottom: 2px;
+    padding-left: 5px;
+    width: 29px;
+    height: 18px;
+  }
+
+#mail:hover, #send:hover, #closemodal:hover, #send:hover{
+  cursor: pointer;
+}
+
+#arrow {
+  opacity: 0;
+  z-index: 2;
+  position: fixed;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity .5s ease-in;
+  -webkit-transition: opacity .5s ease-in;
+   -moz-transition: opacity .5s ease-in;
+    -ms-transition: opacity .5s ease-in;
+     -o-transition: opacity .5s ease-in;
+        transition: opacity .5s ease-in;
+}
+
+.ready {
+  cursor: pointer;
+}
+
+.slide {
+  width: 100vw;
+  height: 100vh;
+  -webkit-transition: opacity .5s ease-in;
+   -moz-transition: opacity .5s ease-in;
+    -ms-transition: opacity .5s ease-in;
+     -o-transition: opacity .5s ease-in;
+        transition: opacity .5s ease-in;
+}
+
 #walkincontainer {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    opacity: 0;
-    background-color: black;
-    background-size: 50% auto;
-    background-repeat: no-repeat;
-    background-position: right 30%;
-    -webkit-transition: opacity .5s ease-in;
-     -moz-transition: opacity .5s ease-in;
-      -ms-transition: opacity .5s ease-in;
-       -o-transition: opacity .5s ease-in;
-          transition: opacity .5s ease-in;
+  position: absolute;
+  opacity: 0;
+  background-color: black;
+  background-size: 50% auto;
+  background-repeat: no-repeat;
+  background-position: right 30%;
 }
 
 #walkin{
@@ -145,37 +150,6 @@ body, html{
     -ms-transition: opacity .5s ease-in;
      -o-transition: opacity .5s ease-in;
         transition: opacity .5s ease-in;
-}
-
-#about div{
-  position: absolute;
-  top: 30%;
-  left: 15%;
-  width: 50vw;
-  height: 100vh;
-}
-
-#about span{
-  color: white;
-  opacity: 0;
-  margin-top: 10px;
-  -webkit-transition: opacity .5s ease-in;
-   -moz-transition: opacity .5s ease-in;
-    -ms-transition: opacity .5s ease-in;
-     -o-transition: opacity .5s ease-in;
-        transition: opacity .5s ease-in;
-}
-
-#about img{
-    margin-top: 15px;
-}
-
-#andrewrussell {
-  text-shadow: 2px 2px #FF879D;
-  font-family: 'ChromosomeHeavy', cursive;
-  color: white;
-  font-size: 2.6rem;
-  display: block;
 }
 
 #storys {
@@ -241,15 +215,7 @@ body, html{
           transition: opacity .5s ease-in;
 }
 
-/* #right {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 102vw;
-  height: 102vh;
-} */
-
-#believeme {
+#walkaway {
   display: table;
   position: absolute;
   color: white;
@@ -262,13 +228,13 @@ body, html{
   background-repeat: no-repeat;
 }
 
-#believemecontainer{
+#walkawaycontainer{
   vertical-align: middle;
   display: table-cell;
   text-align: center;
 }
 
-#believeme span{
+#walkaway span{
   font-size: 5rem;
   opacity: 0;
   -webkit-transition: opacity .5s ease-in;
@@ -284,33 +250,38 @@ body, html{
   left: 0;
 }
 
+#dreams {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  background-image: url("lamb_swan.png");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center 50%;
+}
+
+#dream-table {
+  display: table;
+  width: 100vw;
+  height: 100vh;
+}
+
+#dream {
+  vertical-align: middle;
+  display: table-cell;
+  text-align: center;
+  text-shadow: 2px 2px #FF879D;
+  font-family: 'Lobster Two', cursive;
+  color: white;
+  font-size: 3.5rem;
+}
+
 #shape {
   bottom: 0;
   left: 0;
 }
 
-#doyou {
-  position: absolute;
-  opacity: 0;
-  background-image: url("rollins_flowers_butterfly.jpg");
-  background-size: 115% auto;
-  background-repeat: no-repeat;
-  background-position: center 50%;
-  font-family: 'Reenie Beanie', cursive;
-}
-
-#doyou span{
-  display: inline-block;
-  color: white;
-  font-size: 4rem;
-  text-shadow: 2px 2px #F0000F;
-  opacity: 0;
-  -webkit-transition: opacity .5s ease-in;
-   -moz-transition: opacity .5s ease-in;
-    -ms-transition: opacity .5s ease-in;
-     -o-transition: opacity .5s ease-in;
-        transition: opacity .5s ease-in;
-}
 
 #feather {
   position: absolute;
@@ -340,48 +311,6 @@ body, html{
   top: 50%;
   transform: translateY(-50%);
 }
-
-#marquee {
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-#marquee img{
-  display: inline-block;
-  height: 600px;
-  animation: marquee 7s linear infinite;
-}
-
-@keyframes marquee {
-    0%   { transform: translate(0, 0); }
-    100% { transform: translate(-100%, 0); }
-  }
-
-/* #ten {
-  position: absolute;
-  opacity: 0;
-  background-image: url("FAGPrintly.png");
-  background-color: #F9E29A;
-  background-repeat: no-repeat;
-  background-size: 50% auto;
-  background-position: 20% 50%;
-} */
-
-/* #eleven {
-  position: absolute;
-  opacity: 0;
-  background-image: url("Beard.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left;
-}
-
-#twelve {
-  position: absolute;
-  opacity: 0;
-  background-image: url("studded_belt.png");
-  background-size: 50% auto;
-} */
 
 #modal {
   padding-top: 15px;
@@ -424,6 +353,7 @@ label{
 }
 
 input, textarea {
+  font-family: 'Raleway', sans-serif;
   width: 90%;
   font-size: 1em;
   color: white;
