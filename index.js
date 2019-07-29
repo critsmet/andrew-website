@@ -14,12 +14,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
   //currentSlide is at 0 only when the user first visits the page and never after
   let currentSlide = 0
 
+  //when modal is turned on, scroll will be disabled
+  let disableScroll = false
+
+    //disable scroll when modal is open or screen is small
+  function scrollEnabled() {
+    return (disableScroll || (screen.width <= 900) ? false : true)
+  }
 
   function scrollDirection(direction){
-    if (direction === "down"){
-      console.log("down", currentSlide)
-      switch (currentSlide) {
-        case 0:
+    if (scrollEnabled()){
+      if (direction === "down" ){
+        console.log("down", currentSlide)
+        switch (currentSlide) {
+          case 0:
           currentSlide++
           show(about)
           setTimeout(function(){
@@ -28,7 +36,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             showArrow()
           }, 750)
           break;
-        case 1:
+          case 1:
           currentSlide++
           hideArrow()
           hide(about)
@@ -37,7 +45,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             walkIn()
           }, 500)
           break;
-        case 2:
+          case 2:
           currentSlide++
           hideArrow()
           hide(walkincontainer)
@@ -46,7 +54,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             storySlide()
           }, 500)
           break;
-        case 3:
+          case 3:
           currentSlide++
           hideArrow()
           hide(storys)
@@ -55,7 +63,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             iAmASlide()
           }, 500)
           break;
-        case 4:
+          case 4:
           currentSlide++
           hideArrow()
           hide(iama)
@@ -64,7 +72,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             walkAwaySlide()
           }, 500)
           break;
-        case 5:
+          case 5:
           currentSlide++
           hideArrow()
           hide(walkaway)
@@ -75,7 +83,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             showArrow()
           }, 2500)
           break;
-        case 6:
+          case 6:
           currentSlide++
           hideArrow()
           hide(dreams)
@@ -84,25 +92,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
             featherSlide()
           }, 500)
           break;
-        case 7:
+          case 7:
           currentSlide = 1
           hideArrow()
           hide(feather)
-        setTimeout(function(){
-          show(about)
-          andrewrussell.style.opacity = 1
-          bio.style.opacity = 1
-          showArrow()
-        }, 500)
-        default:
+          setTimeout(function(){
+            show(about)
+            andrewrussell.style.opacity = 1
+            bio.style.opacity = 1
+            showArrow()
+          }, 500)
+          default:
           break;
         }
-     } else if (direction === "up"){
-       console.log("up", currentSlide)
-      switch (currentSlide) {
-        case 1:
+      } else if (direction === "up"){
+        console.log("up", currentSlide)
+        switch (currentSlide) {
+          case 1:
           break;
-        case 2:
+          case 2:
           currentSlide--
           hideArrow()
           hide(walkincontainer)
@@ -114,7 +122,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             bio.style.opacity = 1
           }, 750)
           break;
-        case 3:
+          case 3:
           currentSlide--
           hideArrow()
           hide(storys)
@@ -123,7 +131,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             walkIn()
           }, 500)
           break;
-        case 4:
+          case 4:
           currentSlide--
           hideArrow()
           hide(iama)
@@ -132,7 +140,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             storySlide()
           }, 500)
           break;
-        case 5:
+          case 5:
           currentSlide--
           hideArrow()
           hide(walkaway)
@@ -141,7 +149,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             iAmASlide()
           }, 500)
           break;
-        case 6:
+          case 6:
           currentSlide--
           hideArrow()
           hide(dreams)
@@ -150,7 +158,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             walkAwaySlide()
           }, 500)
           break;
-        case 7:
+          case 7:
           currentSlide--
           hideArrow()
           hide(feather)
@@ -158,11 +166,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
             show(dreams)
           }, 500)
           break;
-        default:
+          default:
           break;
         }
       }
     }
+  }
 
   //custom effect timings
   function walkIn(){
@@ -252,11 +261,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   function showModal(){
+    disableScroll = true
+    hideArrow()
     dim(about)
     setTimeout(() => show(modal), 250)
   }
 
   function hideModal(){
+    disableScroll = false
+    showArrow()
     modal.style.opacity = 0
     show(about)
     setTimeout(() => {
