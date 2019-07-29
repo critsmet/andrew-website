@@ -50,6 +50,10 @@
 
 }
 
+a {
+  text-decoration: none;
+}
+
 body, html{
     background-color: black;
     display: block;
