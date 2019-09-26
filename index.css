@@ -13,9 +13,10 @@
     visibility: hidden;
   }
  
- #about {
-  display: none;
- }
+  #about {
+   background-image: url("https://res.cloudinary.com/apostrophe/image/upload/v1569470429/andyk.jpg");
+   display: none;
+  }
 
   #about div {
     width: 65vw;
