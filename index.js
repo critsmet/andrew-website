@@ -274,12 +274,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
   function sendEmail(){
     Email.send({
       Host : "smtp.elasticemail.com",
-      Username : "chrismhmm@gmail.com",
-      Password : "9afc4867-9dd6-4e79-b764-82010bba5cf2",
-      To : 'chrismhmm@gmail.com',
-      From : 'chrismhmm@gmail.com',
+      Username : "heyheyandyk@gmail.com",
+      Password : "c901c492-9ae1-477a-98cc-4f04ab4320e3",
+      To : "heyheyandyk@gmail.com",
+      From : "heyheyandyk@gmail.com",
       ReplyAddress : email.value,
-      Subject : `A Message From ${sender.value}`,
+      Subject : `Hey Hey! A Message From ${sender.value}`,
       Body : message.value
     })
     .then(console.log)
