@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('load', (event) => {
 
   //helper code for showing or hiding elements in the switch below
   function hide(element){
