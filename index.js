@@ -282,7 +282,6 @@ window.addEventListener('load', (event) => {
       Subject : `Hey Hey! A Message From ${sender.value}`,
       Body : message.value
     })
-    .then(console.log)
     .then(hideModal);
   }
 
