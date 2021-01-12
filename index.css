@@ -1,11 +1,11 @@
 @font-face {
  font-family: 'Chromosome';
- src: url('./ChromosomeHeavy.woff') format('woff');
+ src: url('./public/fonts/ChromosomeHeavy.woff') format('woff');
 }
 
 @font-face {
   font-family: 'ChromosomeReversed';
-  src: url('./ChromosomeReversed.woff') format('woff');
+  src: url('./public/fonts/ChromosomeReversed.woff') format('woff');
 }
 
 @media screen and (max-width: 900px) {
@@ -29,7 +29,7 @@
 
 @media screen and (min-width: 900px){
   #about {
-    background-image: url("andykedited.jpg");
+    background-image: url("https://res.cloudinary.com/apostrophe/image/upload/v1610421553/AndyK/andykedited.jpg");
   }
 
   #about div {
@@ -200,7 +200,7 @@ body, html{
   display: table;
   position: absolute;
   opacity: 0;
-  background-image: url("j_criscitello_golden_roses.jpg");
+  background-image: url("https://res.cloudinary.com/apostrophe/image/upload/v1610421627/AndyK/j_criscitello_golden_roses.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
@@ -240,7 +240,7 @@ body, html{
 }
 
 #iamadiv {
-  background-image: url("telephones.png");
+  background-image: url("https://res.cloudinary.com/apostrophe/image/upload/v1610421635/AndyK/telephones.png");
   background-size: 105% auto;
   background-repeat: no-repeat;
   background-position: center 50%;
@@ -265,7 +265,7 @@ body, html{
   color: white;
   font-family: 'Kumar One', cursive;
   text-shadow: 2px 2px #40D1FF;
-  background-image: url("studded_belt.jpg");
+  background-image: url("https://res.cloudinary.com/apostrophe/image/upload/v1610421620/AndyK/studded_belt.jpg");
   opacity: 0;
   background-size: cover;
   background-position: center center;
@@ -299,7 +299,7 @@ body, html{
   width: 100vw;
   height: 100vh;
   opacity: 0;
-  background-image: url("lamb_swan.png");
+  background-image: url("https://res.cloudinary.com/apostrophe/image/upload/v1610421630/AndyK/lamb_swan.png");
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center 50%;
@@ -330,7 +330,7 @@ body, html{
 #feather {
   position: absolute;
   opacity: 0;
-  background-image: url("feather.jpg");
+  background-image: url("https://res.cloudinary.com/apostrophe/image/upload/v1610421620/AndyK/feather.jpg");
   background-size: 100% auto;
   background-position: center 50%;
 }

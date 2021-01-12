@@ -1,10 +1,11 @@
 window.addEventListener('load', (event) => {
 
-  //helper code for showing or hiding elements in the switch below
+  //functions for showing or hiding elements in the switch below
   function hide(element){
     element.style.opacity = 0
     element.style.zIndex = -1
   }
+
 
   function show(element){
     element.style.opacity = 1
@@ -17,7 +18,7 @@ window.addEventListener('load', (event) => {
   //when modal is turned on, scroll will be disabled
   let disableScroll = false
 
-    //disable scroll when modal is open or screen is small
+  //disable scroll when modal is open or screen is small
   function scrollEnabled() {
     return (disableScroll || (screen.width <= 900) ? false : true)
   }
