@@ -1,16 +1,20 @@
+//functions for showing or hiding elements in the switch below
+function hide(element){
+  element.style.opacity = 0
+  element.style.zIndex = -1
+}
+
+
+function show(element){
+  element.style.opacity = 1
+  element.style.zIndex = 1
+}
+
+show(loading)
+
 window.addEventListener('load', (event) => {
 
-  //functions for showing or hiding elements in the switch below
-  function hide(element){
-    element.style.opacity = 0
-    element.style.zIndex = -1
-  }
-
-
-  function show(element){
-    element.style.opacity = 1
-    element.style.zIndex = 1
-  }
+  hide(loading)
 
   //currentSlide is at 0 only when the user first visits the page and never after
   let currentSlide = 0
