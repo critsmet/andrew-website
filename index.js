@@ -280,7 +280,7 @@ function iAmASlide(direction){
   }, 3500)
   setTimeout(function(){
     showArrow()
-  }, direction === "up" ? 0 : 2500)
+  }, direction === "up" ? 0 : 4000)
 }
 
 function walkAwaySlide(direction){
