@@ -1,4 +1,4 @@
-//if the site is being viewed on a smaller device, do not load any photos to increase load speed
+//if the site is being viewed on a smaller device, do not load any photos. this increases load speed
 if (screen.width < 900){
   beginSite()
 } else {
@@ -9,7 +9,8 @@ if (screen.width < 900){
     about.style.backgroundImage = "url('https://res.cloudinary.com/apostrophe/image/upload/q_50/v1610421553/AndyK/andykedited.jpg')"
     //once main photo has loaded, show the first slide
     beginSite()
-    //then load the photos for the other slides (speeds up initial loading time of application, see note above addBackgroundImageUrlsToSlides function)
+    //then load the photos for the other slides
+    //this speeds up initial loading time of application, see note above addBackgroundImageUrlsToSlides function
     addBackgroundImageUrlsToSlides()
   }
 }
@@ -60,19 +61,6 @@ function scroll(e){
       document.addEventListener("wheel", scroll)
     }, 1000)
   }
-}
-
-function showArrow(){
-  setTimeout(() => {
-    arrow.style.opacity = 1
-    arrow.style.zIndex = 2
-    arrow.classList.value = "ready"
-  }, 1000)
-}
-
-function hideArrow(){
-  arrow.style.opacity = 0
-  arrow.classList.value = ""
 }
 
 function showModal(){
@@ -138,148 +126,119 @@ function show(element){
   element.style.zIndex = 1
 }
 
+//function that handles "slide" transitions
+function nextSlide(direction, elementToHide, elementToShow, correspondingSlideFunction){
+  direction === "down" ? currentSlide++ : currentSlide--
+  hideArrow()
+  hide(elementToHide)
+  setTimeout(function(){
+    show(elementToShow)
+    correspondingSlideFunction && correspondingSlideFunction(direction)
+  }, 500)
+}
+
+function showArrow(){
+  setTimeout(() => {
+    arrow.style.opacity = 1
+    arrow.style.zIndex = 2
+    arrow.classList.value = "ready"
+  }, 1000)
+}
+
+function hideArrow(){
+  arrow.style.opacity = 0
+  arrow.classList.value = ""
+}
+
 function scrollDirection(direction){
   if (scrollEnabled()){
     if (direction === "down" ){
       switch (currentSlide) {
         case 1:
-        currentSlide++
-        hideArrow()
-        hide(about)
-        setTimeout(function(){
-          show(walkincontainer)
-          walkIn()
-        }, 500)
-        break;
+          nextSlide("down", about, walkincontainer, walkIn)
+          break;
         case 2:
-        currentSlide++
-        hideArrow()
-        hide(walkincontainer)
-        setTimeout(function(){
-          show(storys)
-          storySlide()
-        }, 500)
-        break;
+          nextSlide("down", walkincontainer, storys, storySlide)
+          break;
         case 3:
-        currentSlide++
-        hideArrow()
-        hide(storys)
-        setTimeout(function(){
-          show(iama)
-          iAmASlide()
-        }, 500)
-        break;
+          nextSlide("down", storys, iama, iAmASlide)
+          break;
         case 4:
-        currentSlide++
-        hideArrow()
-        hide(iama)
-        setTimeout(function(){
-          show(walkaway)
-          walkAwaySlide()
-        }, 500)
-        break;
+          nextSlide("down", iama, walkaway, walkAwaySlide)
+          break;
         case 5:
-        currentSlide++
-        hideArrow()
-        hide(walkaway)
-        setTimeout(function(){
-          show(dreams)
-        }, 500)
-        setTimeout(function(){
-          showArrow()
-        }, 2500)
-        break;
+          //this one has some unique logic going on so I kept it without using the nextSlide function
+          currentSlide++
+          hideArrow()
+          hide(walkaway)
+          setTimeout(function(){
+            show(dreams)
+          }, 500)
+          setTimeout(function(){
+            showArrow()
+          }, 2500)
+          break;
         case 6:
-        currentSlide++
-        hideArrow()
-        hide(dreams)
-        setTimeout(function(){
-          show(feather)
-          featherSlide()
-        }, 500)
-        break;
+          nextSlide("down", dreams, feather, featherSlide)
+          break;
         case 7:
-        currentSlide = 1
-        hideArrow()
-        hide(feather)
-        setTimeout(function(){
-          show(about)
-          andrewrussell.style.opacity = 1
-          bio.style.opacity = 1
-          showArrow()
-        }, 500)
+          //also unique logic
+          currentSlide = 1
+          hideArrow()
+          hide(feather)
+          setTimeout(function(){
+            show(about)
+            andrewrussell.style.opacity = 1
+            bio.style.opacity = 1
+            showArrow()
+          }, 500)
+          break;
         default:
-        break;
+          break;
       }
     } else if (direction === "up"){
       switch (currentSlide) {
         case 1:
-        break;
+          //can't run the "slideshow" in reverse from the main about page
+          break;
         case 2:
-        currentSlide--
-        hideArrow()
-        hide(walkincontainer)
-        setTimeout(function(){
-          show(about)
-        }, 250)
-        setTimeout(function(){
-          andrewrussell.style.opacity = 1
-          bio.style.opacity = 1
-        }, 750)
-        break;
+          //unique logic
+          currentSlide--
+          hideArrow()
+          hide(walkincontainer)
+          setTimeout(function(){
+            show(about)
+          }, 250)
+          setTimeout(function(){
+            andrewrussell.style.opacity = 1
+            bio.style.opacity = 1
+            showArrow()
+          }, 750)
+          break;
         case 3:
-        currentSlide--
-        hideArrow()
-        hide(storys)
-        setTimeout(function(){
-          show(walkincontainer)
-          walkIn()
-        }, 500)
-        break;
+          nextSlide("up", storys, walkincontainer, walkIn)
+          break;
         case 4:
-        currentSlide--
-        hideArrow()
-        hide(iama)
-        setTimeout(function(){
-          show(storys)
-          storySlide()
-        }, 500)
-        break;
+          nextSlide("up", iama, storys, storySlide)
+          break;
         case 5:
-        currentSlide--
-        hideArrow()
-        hide(walkaway)
-        setTimeout(function(){
-          show(iama)
-          iAmASlide()
-        }, 500)
-        break;
+          nextSlide("up", walkaway, iama, iAmASlide)
+          break;
         case 6:
-        currentSlide--
-        hideArrow()
-        hide(dreams)
-        setTimeout(function(){
-          show(walkaway)
-          walkAwaySlide()
-        }, 500)
-        break;
+          nextSlide("up", dreams, walkaway, walkAwaySlide)
+          break;
         case 7:
-        currentSlide--
-        hideArrow()
-        hide(feather)
-        setTimeout(function(){
-          show(dreams)
-        }, 500)
-        break;
+          nextSlide("up", feather, dreams, walkIn)
+          break;
         default:
-        break;
+          break;
       }
     }
   }
 }
 
-//custom effect timings
-function walkIn(){
+//custom effect timings aka corresponding slide functions
+function walkIn(direction){
   setTimeout(function(){
     walk.style.opacity = 1
   }, 500)
@@ -291,10 +250,10 @@ function walkIn(){
   }, 2500)
   setTimeout(function(){
     showArrow()
-  }, 2500)
+  }, direction === "up" ? 0 : 2500)
 }
 
-function storySlide(){
+function storySlide(direction){
   setTimeout(function(){
     story.style.opacity = 1
   }, 500)
@@ -306,10 +265,10 @@ function storySlide(){
   }, 3500)
   setTimeout(function(){
     showArrow()
-  }, 3500)
+  }, direction === "up" ? 0 : 3500)
 }
 
-function iAmASlide(){
+function iAmASlide(direction){
   setTimeout(function(){
     storyteller.style.opacity = 1
   }, 500)
@@ -321,10 +280,10 @@ function iAmASlide(){
   }, 3500)
   setTimeout(function(){
     showArrow()
-  }, 2500)
+  }, direction === "up" ? 0 : 2500)
 }
 
-function walkAwaySlide(){
+function walkAwaySlide(direction){
   setTimeout(function(){
     could.style.opacity = 1
   }, 500)
@@ -336,10 +295,10 @@ function walkAwaySlide(){
   }, 3000)
   setTimeout(function(){
     showArrow()
-  }, 3000)
+  }, direction === "up" ? 0 : 3000)
 }
 
-function featherSlide(){
+function featherSlide(direction){
   setTimeout(function(){
     the.style.opacity = 1
   }, 1250)
@@ -357,5 +316,5 @@ function featherSlide(){
   }, 3250)
   setTimeout(function(){
     showArrow()
-  }, 3250)
+  }, direction === "up" ? 0 : 3250)
 }
