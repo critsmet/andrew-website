@@ -1,12 +1,28 @@
+/* CSS is organized generally by order of appearance */
+
+a {
+  text-decoration: none;
+}
+
+body, html{
+  background-color: black;
+  display: block;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  font-family: 'Helvetica Neue', helvetica, sans-serif;
+  font-size: 16px;
+  overflow: hidden;
+}
+
 @font-face {
  font-family: 'Chromosome';
  src: url('./public/fonts/ChromosomeHeavy.woff') format('woff');
 }
 
-@font-face {
-  font-family: 'ChromosomeReversed';
-  src: url('./public/fonts/ChromosomeReversed.woff') format('woff');
-}
+/* If the site is being viewed on a small screen, scrolling is disabled so the arrow is hidden and the size of the about div and modal are smaller */
 
 @media screen and (max-width: 900px) {
   #arrow {
@@ -20,17 +36,15 @@
   #modal {
     width: 100vw;
     height: 90vh;
+    margin-top: 20%;
   }
 
   #message {
-    height: 30vh;
+    height: 25vh;
   }
 }
 
 @media screen and (min-width: 900px){
-  #about {
-    background-image: url("https://res.cloudinary.com/apostrophe/image/upload/v1610421553/AndyK/andykedited.jpg");
-  }
 
   #about div {
     width: 40vw;
@@ -48,58 +62,18 @@
   #message {
     height: 13vh;
   }
-
-}
-
-a {
-  text-decoration: none;
-}
-
-body, html{
-    background-color: black;
-    display: block;
-    position: fixed;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100vh;
-    font-family: 'Helvetica Neue', helvetica, sans-serif;
-    font-size: 16px;
-    overflow: hidden;
-  }
-
-#loading {
-    text-shadow: 2px 2px #FF879D;
-    font-family: 'Chromosome', cursive;
-    letter-spacing: -1.5px;
-    color: white;
-    font-size: 1.5rem;
-    font
-    display: block;
-    position: absolute;
-    top: 32.5%;
-    left: 15%;
-    height: 100vh;
-    opacity: 0;
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    -webkit-transition: opacity .5s ease-in;
-     -moz-transition: opacity .5s ease-in;
-      -ms-transition: opacity .5s ease-in;
-       -o-transition: opacity .5s ease-in;
-          transition: opacity .5s ease-in;
 }
 
 #about {
-    position: absolute;
-    opacity: 0;
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    -webkit-transition: opacity .5s ease-in;
-     -moz-transition: opacity .5s ease-in;
-      -ms-transition: opacity .5s ease-in;
-       -o-transition: opacity .5s ease-in;
-          transition: opacity .5s ease-in;
+  position: absolute;
+  opacity: 0;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  -webkit-transition: opacity .5s ease;
+  -moz-transition: opacity .5s ease;
+  -ms-transition: opacity .5s ease;
+  -o-transition: opacity .5s ease;
+  transition: opacity .5s ease;
 }
 
 #bio{
@@ -131,11 +105,11 @@ body, html{
   color: white;
   opacity: 0;
   margin-top: 10px;
-  -webkit-transition: opacity .5s ease-in;
-   -moz-transition: opacity .5s ease-in;
-    -ms-transition: opacity .5s ease-in;
-     -o-transition: opacity .5s ease-in;
-        transition: opacity .5s ease-in;
+  -webkit-transition: opacity .5s ease;
+  -moz-transition: opacity .5s ease;
+  -ms-transition: opacity .5s ease;
+  -o-transition: opacity .5s ease;
+  transition: opacity .5s ease;
 }
 
 #about img{
@@ -143,239 +117,19 @@ body, html{
 }
 
 #insta {
-    width: 20px;
-    height: 20px;
-  }
+  width: 20px;
+  height: 20px;
+}
 
-  #mail {
-    padding-bottom: 2px;
-    padding-left: 5px;
-    width: 29px;
-    height: 18px;
-  }
+#mail {
+  padding-bottom: 2px;
+  padding-left: 5px;
+  width: 29px;
+  height: 18px;
+}
 
 #mail:hover, #send:hover, #closemodal:hover, #send:hover{
   cursor: pointer;
-}
-
-#arrow {
-  opacity: 0;
-  z-index: 2;
-  position: fixed;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: opacity .5s ease-in;
-  -webkit-transition: opacity .5s ease-in;
-   -moz-transition: opacity .5s ease-in;
-    -ms-transition: opacity .5s ease-in;
-     -o-transition: opacity .5s ease-in;
-        transition: opacity .5s ease-in;
-}
-
-.ready {
-  cursor: pointer;
-}
-
-.slide {
-  width: 100vw;
-  height: 100vh;
-  -webkit-transition: opacity .5s ease-in;
-   -moz-transition: opacity .5s ease-in;
-    -ms-transition: opacity .5s ease-in;
-     -o-transition: opacity .5s ease-in;
-        transition: opacity .5s ease-in;
-}
-
-#walkincontainer {
-  position: absolute;
-  opacity: 0;
-  background-color: black;
-  background-size: 50% auto;
-  background-repeat: no-repeat;
-  background-position: right 30%;
-}
-
-#walkin{
-  position: absolute;
-  left: 15%;
-  top: 20%;
-}
-
-#walkin span{
-  color: white;
-  font-size: 3rem;
-  font-family: 'Bungee Shade', cursive;
-  text-shadow: 2px 2px #DCB33E;
-  opacity: 0;
-  display: inline-block;
-  margin-bottom: 2rem;
-  padding: 10px;
-  -webkit-transition: opacity .5s ease-in;
-   -moz-transition: opacity .5s ease-in;
-    -ms-transition: opacity .5s ease-in;
-     -o-transition: opacity .5s ease-in;
-        transition: opacity .5s ease-in;
-}
-
-#storys {
-  display: table;
-  position: absolute;
-  opacity: 0;
-  background-image: url("https://res.cloudinary.com/apostrophe/image/upload/v1610421627/AndyK/j_criscitello_golden_roses.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: white;
-  font-size: 2.75rem;
-  font-family: 'Yatra One', cursive;
-  text-shadow: 4px 4px #000000;
-}
-
-#storys div{
-  background-position: center 50%;
-  vertical-align: middle;
-  display: table-cell;
-  text-align: center;
-}
-
-#storys span{
-  opacity: 0;
-  display: inline-block;
-  margin-bottom: 2rem;
-  padding: 10px;
-  -webkit-transition: opacity .5s ease-in;
-   -moz-transition: opacity .5s ease-in;
-    -ms-transition: opacity .5s ease-in;
-     -o-transition: opacity .5s ease-in;
-        transition: opacity .5s ease-in;
-}
-
-#iama {
-    display: table;
-    position: absolute;
-    font-size: 3rem;
-    text-shadow: 2px 2px #000000;
-    font-family: 'Chromosome', cursive;
-    color: white;
-    opacity: 0;
-    background-color: #EFD409;
-}
-
-#iamadiv {
-  background-image: url("https://res.cloudinary.com/apostrophe/image/upload/v1610421635/AndyK/telephones.png");
-  background-size: 105% auto;
-  background-repeat: no-repeat;
-  background-position: center 50%;
-  vertical-align: middle;
-  display: table-cell;
-  text-align: center;
-}
-
-#iama span{
-    background-color: black;
-    opacity: 0;
-    -webkit-transition: opacity .5s ease-in;
-     -moz-transition: opacity .5s ease-in;
-      -ms-transition: opacity .5s ease-in;
-       -o-transition: opacity .5s ease-in;
-          transition: opacity .5s ease-in;
-}
-
-#walkaway {
-  display: table;
-  position: absolute;
-  color: white;
-  font-family: 'Kumar One', cursive;
-  text-shadow: 2px 2px #40D1FF;
-  background-image: url("https://res.cloudinary.com/apostrophe/image/upload/v1610421620/AndyK/studded_belt.jpg");
-  opacity: 0;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
-#walkawaycontainer{
-  vertical-align: middle;
-  display: table-cell;
-  text-align: center;
-}
-
-#walkaway span{
-  font-size: 5rem;
-  opacity: 0;
-  -webkit-transition: opacity .5s ease-in;
-   -moz-transition: opacity .5s ease-in;
-    -ms-transition: opacity .5s ease-in;
-     -o-transition: opacity .5s ease-in;
-        transition: opacity .5s ease-in;
-}
-
-#stories {
-  padding-left: 5%
-  top: 0;
-  left: 0;
-}
-
-#dreams {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  opacity: 0;
-  background-image: url("https://res.cloudinary.com/apostrophe/image/upload/v1610421630/AndyK/lamb_swan.png");
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  background-position: center 50%;
-}
-
-#dream-table {
-  display: table;
-  width: 100vw;
-  height: 100vh;
-}
-
-#dream {
-  vertical-align: middle;
-  display: table-cell;
-  text-align: center;
-  text-shadow: 2px 2px #FF879D;
-  font-family: 'Lobster Two', cursive;
-  color: white;
-  font-size: 3.5rem;
-}
-
-#shape {
-  bottom: 0;
-  left: 0;
-}
-
-
-#feather {
-  position: absolute;
-  opacity: 0;
-  background-image: url("https://res.cloudinary.com/apostrophe/image/upload/v1610421620/AndyK/feather.jpg");
-  background-size: 100% auto;
-  background-position: center 50%;
-}
-
-.featherword {
-  opacity: 0;
-  -webkit-transition: opacity .5s ease-in;
-   -moz-transition: opacity .5s ease-in;
-    -ms-transition: opacity .5s ease-in;
-     -o-transition: opacity .5s ease-in;
-        transition: opacity .5s ease-in;
-}
-
-#feathertext{
-  position: absolute;
-  font-family: 'Cabin Sketch', cursive;
-  color: white;
-  text-shadow: 2px 2px black;
-  text-align: center;
-  width: 100%;
-  font-size: 5rem;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 #modal {
@@ -389,11 +143,11 @@ body, html{
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: black;
-  -webkit-transition: opacity .5s ease-in;
-   -moz-transition: opacity .5s ease-in;
-    -ms-transition: opacity .5s ease-in;
-     -o-transition: opacity .5s ease-in;
-        transition: opacity .5s ease-in;
+  -webkit-transition: opacity .5s ease;
+  -moz-transition: opacity .5s ease;
+  -ms-transition: opacity .5s ease;
+  -o-transition: opacity .5s ease;
+  transition: opacity .5s ease;
 }
 
 label, input, textarea {
@@ -448,4 +202,217 @@ textarea::-webkit-scrollbar-thumb {
   font-size: 2em;
   top: 5px;
   right: 15px;
+}
+
+#arrow {
+  opacity: 0;
+  z-index: 2;
+  position: fixed;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity .5s ease;
+  -webkit-transition: opacity .5s ease;
+  -moz-transition: opacity .5s ease;
+  -ms-transition: opacity .5s ease;
+  -o-transition: opacity .5s ease;
+  transition: opacity .5s ease;
+}
+
+/* This attribute is toggled in JS to make sure the arrow used to continue "scrolling" only has a pointer over it when it's being displayed */
+.ready {
+  cursor: pointer;
+}
+
+.slide {
+  width: 100vw;
+  height: 100vh;
+  -webkit-transition: opacity .5s ease;
+  -moz-transition: opacity .5s ease;
+  -ms-transition: opacity .5s ease;
+  -o-transition: opacity .5s ease;
+  transition: opacity .5s ease;
+}
+
+#walkincontainer {
+  position: absolute;
+  opacity: 0;
+  background-color: black;
+  background-size: 50% auto;
+  background-repeat: no-repeat;
+  background-position: right 30%;
+}
+
+#walkin{
+  position: absolute;
+  left: 15%;
+  top: 20%;
+}
+
+#walkin span{
+  color: white;
+  font-size: 3rem;
+  font-family: 'Bungee Shade', cursive;
+  text-shadow: 2px 2px #DCB33E;
+  opacity: 0;
+  display: inline-block;
+  margin-bottom: 2rem;
+  padding: 10px;
+  -webkit-transition: opacity .5s ease;
+  -moz-transition: opacity .5s ease;
+  -ms-transition: opacity .5s ease;
+  -o-transition: opacity .5s ease;
+  transition: opacity .5s ease;
+}
+
+#storys {
+  display: table;
+  position: absolute;
+  opacity: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  font-size: 2.75rem;
+  font-family: 'Yatra One', cursive;
+  text-shadow: 4px 4px #000000;
+}
+
+#storys div{
+  vertical-align: middle;
+  display: table-cell;
+  text-align: center;
+}
+
+#storys span{
+  opacity: 0;
+  display: inline-block;
+  margin-bottom: 2rem;
+  padding: 10px;
+  -webkit-transition: opacity .5s ease;
+   -moz-transition: opacity .5s ease;
+    -ms-transition: opacity .5s ease;
+     -o-transition: opacity .5s ease;
+        transition: opacity .5s ease;
+}
+
+#iama {
+  display: table;
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: 3rem;
+  text-shadow: 2px 2px #000000;
+  font-family: 'Chromosome', cursive;
+  color: white;
+  opacity: 0;
+  background-color: #EFD409;
+}
+
+#iamadiv {
+  vertical-align: middle;
+  display: table-cell;
+  text-align: center;
+}
+
+#iama span{
+  background-color: black;
+  opacity: 0;
+  -webkit-transition: opacity .5s ease;
+  -moz-transition: opacity .5s ease;
+  -ms-transition: opacity .5s ease;
+  -o-transition: opacity .5s ease;
+  transition: opacity .5s ease;
+}
+
+#walkaway {
+  display: table;
+  position: absolute;
+  color: white;
+  font-family: 'Kumar One', cursive;
+  text-shadow: 2px 2px #40D1FF;
+  opacity: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#walkawaycontainer{
+  vertical-align: middle;
+  display: table-cell;
+  text-align: center;
+}
+
+#walkaway span{
+  font-size: 5rem;
+  opacity: 0;
+  -webkit-transition: opacity .5s ease;
+  -moz-transition: opacity .5s ease;
+  -ms-transition: opacity .5s ease;
+  -o-transition: opacity .5s ease;
+  transition: opacity .5s ease;
+}
+
+#stories {
+  padding-left: 5%
+  top: 0;
+  left: 0;
+}
+
+#dreams {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 50%;
+}
+
+#dream-table {
+  display: table;
+  width: 100vw;
+  height: 100vh;
+}
+
+#dream {
+  vertical-align: middle;
+  display: table-cell;
+  text-align: center;
+  text-shadow: 2px 2px #FF879D;
+  font-family: 'Lobster Two', cursive;
+  color: white;
+  font-size: 3.5rem;
+}
+
+#shape {
+  bottom: 0;
+  left: 0;
+}
+
+#feather {
+  position: absolute;
+  opacity: 0;
+  background-size: cover;
+  background-position: center 50%;
+}
+
+.featherword {
+  opacity: 0;
+  -webkit-transition: opacity .5s ease;
+  -moz-transition: opacity .5s ease;
+  -ms-transition: opacity .5s ease;
+  -o-transition: opacity .5s ease;
+  transition: opacity .5s ease;
+}
+
+#feathertext{
+  position: absolute;
+  font-family: 'Cabin Sketch', cursive;
+  color: white;
+  text-shadow: 2px 2px black;
+  text-align: center;
+  width: 100%;
+  font-size: 5rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
